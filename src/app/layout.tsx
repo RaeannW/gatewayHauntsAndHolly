@@ -1,15 +1,26 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Mulish, Alegreya, Alegreya_SC } from "next/font/google";
+import Nav from "@/components/Nav/Nav";
+
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const mulish = Mulish({
   subsets: ["latin"],
+  variable: "--font-sans",
+  weight: ["400", "500", "600", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const alegreya = Alegreya({
   subsets: ["latin"],
+  variable: "--font-serif",
+  weight: ["400", "500", "700"],
+  style: ["normal", "italic"],
+});
+
+const alegreyaSC = Alegreya_SC({
+  subsets: ["latin"],
+  variable: "--font-display",
+  weight: ["400", "500", "700", "900"],
 });
 
 export const metadata: Metadata = {
@@ -23,8 +34,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body>{children}</body>
+    <html
+      lang="en"
+      className={`${mulish.variable} ${alegreya.variable} ${alegreyaSC.variable}`}
+    >
+      <body>
+        <Nav />
+        <main>{children}</main>
+      </body>
     </html>
   );
 }

@@ -1,0 +1,21 @@
+.divider {
+  width: 100%;
+  margin: 1.5rem 0;
+  background-color: currentColor;
+  color: var(--color-text);
+}
+
+.thin {
+  height: 1px;
+}
+
+.thick {
+  height: 4px;
+}
+
+.double {
+  height: 6px;
+  background: none;
+  border-top: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+}
