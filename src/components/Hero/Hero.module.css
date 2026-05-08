@@ -13,15 +13,30 @@
   margin: 0;
   line-height: var(--leading-tight, 1.1);
   letter-spacing: -0.01em;
+  color: var(--h-color-orange);
 }
 
 .subtitle {
   font-family: var(--font-serif), Georgia, serif;
   font-size: var(--text-3xl);
-  font-weight: var(--weight-regular);
+  font-weight: var(--weight-medium);
   text-align: center;
   margin: 0;
   line-height: var(--leading-snug, 1.4);
+}
+
+.subtitleBlock {
+  background-color: color-mix(in srgb, var(--color-tan) 20%, transparent);
+  margin: 1.5rem 0;
+}
+
+.subtitleBlock .subtitle {
+  margin: 0;
+  padding: 1.5rem 1rem;
+}
+
+.subtitleBlock > div {
+  margin: 0;
 }
 
 .bottom {

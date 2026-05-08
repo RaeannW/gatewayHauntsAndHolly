@@ -1,9 +1,13 @@
 import Hero from "@/components/Hero/Hero";
+import FeaturedBlogCard from "@/components/FeaturedBlogCard/FeaturedBlogCard";
+import { getFeaturedPosts } from "@/lib/sample-data";
 import styles from "./page.module.css";
 
 export default function HalloweenPage() {
+  const featured = getFeaturedPosts()[0];
+
   return (
-    <main className={styles.background}>
+    <>
       <Hero
         title="Halloween & Fall"
         subtitle="Tips and Treats to Celebrate the Spookiest Time of the Year"
@@ -20,6 +24,9 @@ export default function HalloweenPage() {
           },
         ]}
       />
-    </main>
+      <section className={styles.halloweenFeaturedSection}>
+        {featured && <FeaturedBlogCard post={featured} />}
+      </section>
+    </>
   );
 }
