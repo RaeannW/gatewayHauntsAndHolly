@@ -1,0 +1,127 @@
+.card {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 10rem;
+  background-image: url("/images/decor/paperFrame.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-12);
+  align-items: center;
+}
+
+.imageWrap {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  background-color: var(--color-black);
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: flex-start;
+}
+
+.label {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: var(--text-base);
+  font-weight: var(--weight-bold);
+  color: var(--h-color-orange);
+  letter-spacing: var(--tracking-wide);
+}
+
+.title {
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  color: var(--color-black);
+  margin: 0;
+}
+
+.excerpt {
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-black);
+  margin: 0;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-black);
+  opacity: 0.7;
+}
+
+.metaSeparator {
+  display: inline-block;
+}
+
+.excerpt {
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-black);
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (max-width: 1000px) {
+  .excerpt {
+    -webkit-line-clamp: 3;
+  }
+}
+
+/* Tablet */
+@media (min-width: 601px) and (max-width: 1000px) {
+  .card {
+    background-image: url("/images/decor/paperFrameTablet.png");
+    padding: clamp(6rem, 17vw, 10rem);
+  }
+
+  .inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .imageWrap {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .card {
+    background-image: url("/images/decor/paperFrameRotated.png");
+    padding: clamp(4.5rem, 20vw, 7rem);
+  }
+
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .imageWrap {
+    aspect-ratio: 4 / 3;
+  }
+
+  .title {
+    font-size: var(--text-2xl);
+  }
+}

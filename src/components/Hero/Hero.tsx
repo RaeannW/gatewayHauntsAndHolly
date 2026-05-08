@@ -25,11 +25,11 @@ export default function Hero({
     <section className={styles.hero}>
       <h1 className={styles.title}>{title}</h1>
 
-      <HeroDivider variant="thin" />
-
-      <p className={styles.subtitle}>{subtitle}</p>
-
-      <HeroDivider variant="thin" />
+      <div className={styles.subtitleBlock}>
+        <HeroDivider variant="thin" />
+        <p className={styles.subtitle}>{subtitle}</p>
+        <HeroDivider variant="thin" />
+      </div>
 
       <HeroCarousel slides={slides} />
 
