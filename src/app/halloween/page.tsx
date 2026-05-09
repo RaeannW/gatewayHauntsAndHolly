@@ -1,10 +1,14 @@
 import Hero from "@/components/Hero/Hero";
 import FeaturedBlogCard from "@/components/FeaturedBlogCard/FeaturedBlogCard";
-import { getFeaturedPosts } from "@/lib/sample-data";
+import BlogFeed from "@/components/BlogFeed/BlogFeed";
+import { getFeaturedPosts, getPostsByHoliday } from "@/lib/sample-data";
 import styles from "./page.module.css";
 
 export default function HalloweenPage() {
   const featured = getFeaturedPosts()[0];
+  const blogPosts = getPostsByHoliday("halloween").filter(
+    (post) => post.postType !== "recipe",
+  );
 
   return (
     <>
@@ -27,6 +31,7 @@ export default function HalloweenPage() {
       <section className={styles.halloweenFeaturedSection}>
         {featured && <FeaturedBlogCard post={featured} />}
       </section>
+      <BlogFeed posts={blogPosts} />
     </>
   );
 }
