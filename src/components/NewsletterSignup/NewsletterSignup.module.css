@@ -1,0 +1,72 @@
+.signup {
+  background: var(--color-cream);
+  padding: var(--space-6);
+  border: 1px solid var(--color-black);
+  position: relative;
+}
+
+.signup::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 0.5px solid var(--color-black);
+  pointer-events: none;
+}
+
+.title {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  font-style: italic;
+  color: var(--color-black);
+  margin: 0 0 var(--space-2);
+}
+
+.description {
+  font-size: var(--text-sm);
+  color: var(--color-black);
+  opacity: 0.75;
+  line-height: var(--leading-snug);
+  margin: 0 0 var(--space-4);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.input {
+  padding: var(--space-3);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: var(--text-sm);
+  color: var(--color-black);
+  background: var(--color-cream);
+  border: 1px solid var(--color-black);
+  border-radius: 0;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.input:focus {
+  border-color: var(--h-color-orange);
+}
+
+.success {
+  font-family: var(--font-serif), Georgia, serif;
+  font-style: italic;
+  color: var(--h-color-orange);
+  font-size: var(--text-base);
+  margin: 0;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
