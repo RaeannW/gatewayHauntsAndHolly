@@ -5,15 +5,14 @@
 }
 
 .title {
-  font-family: var(--font-serif), Georgia, serif;
-  font-size: var(--text-7xl, 4.5rem);
-  font-style: italic;
-  font-weight: var(--weight-medium);
+  font-family: var(--font-display-bold), Georgia, serif;
+  font-size: var(--text-7xl);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
   text-align: center;
   margin: 0;
   line-height: var(--leading-tight, 1.1);
-  letter-spacing: -0.01em;
-  color: var(--h-color-orange);
+  color: var(--h-color-black);
 }
 
 .subtitle {

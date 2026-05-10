@@ -8,14 +8,24 @@ export type Topic =
   | "media"
   | "gifts"
   | "traditions";
+
+export const TOPICS_IN_ORDER: Topic[] = [
+  "diy",
+  "decor",
+  "costumes",
+  "events",
+  "media",
+  "traditions",
+  "gifts",
+];
 export type Audience = "family" | "adults" | "date-night" | "kids";
 export type PostType =
-  | "article" // general blog post
-  | "review" // review of an event, place, product
-  | "guide" // how-to, instructional
-  | "roundup" // list-based ("5 best...")
-  | "recipe" // cooking-focused
-  | "event"; // event preview/announcement
+  | "article"
+  | "review"
+  | "guide"
+  | "roundup"
+  | "recipe"
+  | "event";
 
 export interface Post {
   slug: string;
