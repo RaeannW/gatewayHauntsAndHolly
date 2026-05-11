@@ -9,22 +9,18 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 50px 60px;
+  padding: clamp(40px, 8%, 80px) clamp(50px, 10%, 100px);
   text-decoration: none;
   color: var(--color-black);
-}
-
-.card:hover {
-  transform: translateY(-4px);
 }
 
 .card::before {
   content: "";
   position: absolute;
-  top: 30px;
-  left: 40px;
-  right: 40px;
-  bottom: 30px;
+  top: clamp(25px, 5%, 50px);
+  left: clamp(35px, 7%, 70px);
+  right: clamp(35px, 7%, 70px);
+  bottom: clamp(25px, 5%, 50px);
   border: 1px solid var(--color-black);
   pointer-events: none;
   z-index: 1;
@@ -33,32 +29,13 @@
 .card::after {
   content: "";
   position: absolute;
-  top: 33px;
-  left: 43px;
-  right: 43px;
-  bottom: 33px;
+  top: calc(clamp(25px, 5%, 50px) + 3px);
+  left: calc(clamp(35px, 7%, 70px) + 3px);
+  right: calc(clamp(35px, 7%, 70px) + 3px);
+  bottom: calc(clamp(25px, 5%, 50px) + 3px);
   border: 0.5px solid var(--color-black);
   pointer-events: none;
   z-index: 1;
-}
-
-@media (min-width: 1024px) {
-  .card {
-    padding: 80px 100px;
-  }
-  .card::before {
-    top: 50px;
-    left: 70px;
-    right: 70px;
-    bottom: 50px;
-  }
-
-  .card::after {
-    top: 53px;
-    left: 73px;
-    right: 73px;
-    bottom: 53px;
-  }
 }
 
 .inner {
@@ -80,6 +57,7 @@
   aspect-ratio: 4 / 5;
   background-color: var(--color-black);
   overflow: hidden;
+  margin-top: 0.5rem;
 }
 
 .tag {
@@ -87,7 +65,7 @@
   top: -14px;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--h-color-orange);
+  background: var(--color-accent);
   color: var(--color-black);
   font-family: var(--font-display), Georgia, serif;
   font-size: var(--text-xs);
@@ -153,7 +131,7 @@
 .ornament {
   font-family: var(--font-serif), Georgia, serif;
   font-size: var(--text-lg);
-  color: var(--h-color-orange);
+  color: var(--color-accent);
   line-height: 1;
 }
 
@@ -188,7 +166,7 @@
 .metaDot {
   width: 4px;
   height: 4px;
-  background: var(--h-color-orange);
+  background: var(--color-accent);
   transform: rotate(45deg);
   flex-shrink: 0;
 }

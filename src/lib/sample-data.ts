@@ -27,6 +27,8 @@ export type PostType =
   | "recipe"
   | "event";
 
+export type RecipeSubcategory = "dessert" | "drink" | "appetizer" | "meal";
+
 export interface Post {
   slug: string;
   title: string;
@@ -52,7 +54,26 @@ export interface Post {
   eventLocation?: string;
   eventNeighborhood?: string;
   ticketUrl?: string;
+
+  // Recipe-specific
+  recipeSubcategory?: RecipeSubcategory;
 }
+
+// Recipe subcategories in display order
+export const RECIPE_SUBCATEGORIES_IN_ORDER: RecipeSubcategory[] = [
+  "dessert",
+  "drink",
+  "appetizer",
+  "meal",
+];
+
+// Plural labels for UI
+export const RECIPE_SUBCATEGORY_LABELS: Record<RecipeSubcategory, string> = {
+  dessert: "Desserts",
+  drink: "Drinks",
+  appetizer: "Appetizers",
+  meal: "Meals",
+};
 
 export const samplePosts: Post[] = [
   {
@@ -69,6 +90,7 @@ export const samplePosts: Post[] = [
     holiday: "halloween",
     topic: "recipes",
     postType: "recipe",
+    recipeSubcategory: "dessert",
     audience: ["family", "adults"],
     featured: true,
     readTime: 6,
@@ -163,6 +185,7 @@ export const samplePosts: Post[] = [
     holiday: "christmas",
     topic: "recipes",
     postType: "recipe",
+    recipeSubcategory: "dessert",
     audience: ["family"],
     readTime: 5,
   },
@@ -221,6 +244,60 @@ export const samplePosts: Post[] = [
     sponsored: true,
     readTime: 5,
   },
+  {
+    slug: "spiked-cider-cocktail",
+    title: "Spiked Cider for a Cool Halloween Night",
+    excerpt:
+      "Warmed apple cider with bourbon, cinnamon, and a clove-studded orange peel. Built for a porch and a chill in the air.",
+    image: {
+      src: "/images/placeholder-1.jpg",
+      alt: "Mug of warm spiked cider with cinnamon stick",
+    },
+    author: "Eliza Hart",
+    publishedAt: "2025-10-12",
+    holiday: "halloween",
+    topic: "recipes",
+    postType: "recipe",
+    recipeSubcategory: "drink",
+    audience: ["adults"],
+    readTime: 4,
+  },
+  {
+    slug: "graveyard-dip",
+    title: "Graveyard Dip with Tombstone Crackers",
+    excerpt:
+      "A spinach-artichoke base, sour-cream ghosts, and crackers shaped like crooked headstones. Easier than it sounds.",
+    image: {
+      src: "/images/placeholder-1.jpg",
+      alt: "Halloween dip in a serving bowl with cracker tombstones",
+    },
+    author: "Marcus Bell",
+    publishedAt: "2025-09-30",
+    holiday: "halloween",
+    topic: "recipes",
+    postType: "recipe",
+    recipeSubcategory: "appetizer",
+    audience: ["family"],
+    readTime: 5,
+  },
+  {
+    slug: "haunted-house-chili",
+    title: "Cauldron Chili for a Crowd",
+    excerpt:
+      "A pot of chili built for trick-or-treat night. Make it in the morning, simmer all day, ladle it after the candy run.",
+    image: {
+      src: "/images/placeholder-1.jpg",
+      alt: "Bowl of hearty chili on a wooden table",
+    },
+    author: "Marcus Bell",
+    publishedAt: "2025-10-05",
+    holiday: "halloween",
+    topic: "recipes",
+    postType: "recipe",
+    recipeSubcategory: "meal",
+    audience: ["family"],
+    readTime: 6,
+  },
 ];
 
 // Helper functions
@@ -269,4 +346,36 @@ export function getUpcomingEvents(holiday?: Holiday): Post[] {
       (a, b) =>
         new Date(a.eventDate!).getTime() - new Date(b.eventDate!).getTime(),
     );
+}
+
+export function getLatestRecipes(holiday: Holiday, limit: number = 3): Post[] {
+  return samplePosts
+    .filter(
+      (p) =>
+        p.postType === "recipe" &&
+        (p.holiday === holiday || p.holiday === "both"),
+    )
+    .sort(
+      (a, b) =>
+        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+    )
+    .slice(0, limit);
+}
+
+export function getRecipeSubcategoryCounts(
+  holiday: Holiday,
+): Record<RecipeSubcategory, number> {
+  const recipes = samplePosts.filter(
+    (p) =>
+      p.postType === "recipe" &&
+      (p.holiday === holiday || p.holiday === "both"),
+  );
+
+  return {
+    dessert: recipes.filter((p) => p.recipeSubcategory === "dessert").length,
+    drink: recipes.filter((p) => p.recipeSubcategory === "drink").length,
+    appetizer: recipes.filter((p) => p.recipeSubcategory === "appetizer")
+      .length,
+    meal: recipes.filter((p) => p.recipeSubcategory === "meal").length,
+  };
 }

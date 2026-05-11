@@ -6,7 +6,7 @@
 
 .title {
   font-family: var(--font-display-bold), Georgia, serif;
-  font-size: var(--text-7xl);
+  font-size: clamp(var(--text-5xl), 12vw, var(--text-9xl));
   text-transform: uppercase;
   letter-spacing: var(--tracking-wide);
   text-align: center;
@@ -59,9 +59,6 @@
 }
 
 @media (max-width: 768px) {
-  .title {
-    font-size: var(--text-5xl);
-  }
   .subtitle {
     font-size: var(--text-2xl);
   }

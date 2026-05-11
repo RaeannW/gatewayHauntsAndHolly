@@ -1,10 +1,13 @@
 import Hero from "@/components/Hero/Hero";
 import FeaturedBlogCard from "@/components/FeaturedBlogCard/FeaturedBlogCard";
 import BlogSection from "@/components/BlogSection/BlogSection";
+import RecipesSection from "@/components/RecipesSection/RecipesSection";
 import { Category } from "@/components/CategoriesList/CategoriesList";
 import {
   getFeaturedPosts,
   getPostsByHoliday,
+  getLatestRecipes,
+  getRecipeSubcategoryCounts,
   TOPICS_IN_ORDER,
 } from "@/lib/sample-data";
 import styles from "./page.module.css";
@@ -22,6 +25,9 @@ export default function HalloweenPage() {
       count: blogPosts.filter((p) => p.topic === topic).length,
     })).filter((cat) => cat.count > 0),
   ];
+
+  const latestRecipes = getLatestRecipes("halloween", 3);
+  const recipeCounts = getRecipeSubcategoryCounts("halloween");
 
   return (
     <>
@@ -55,6 +61,17 @@ export default function HalloweenPage() {
           alt: "Vintage Halloween illustration",
         }}
         garlandImage="/images/decor/laceTile.svg"
+        garlandHeight={60}
+      />
+
+      <RecipesSection
+        heroTitle="Recipes"
+        heroSubtitle="Spooky-season sweets, savory bites, and drinks worth pouring into a goblet."
+        sectionTitle="Latest Halloween Recipes"
+        recipes={latestRecipes}
+        counts={recipeCounts}
+        tabBasePath="/halloween/recipes"
+        garlandImage="/images/decor/laceTileCream.svg"
         garlandHeight={60}
       />
     </>

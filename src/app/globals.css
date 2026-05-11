@@ -26,6 +26,8 @@ body {
 }
 
 :root {
+  --color-accent: var(--h-color-orange);
+
   /* Colors All */
   --color-cream: #faf6ee;
   --color-tan: #c4a57b;
@@ -50,6 +52,9 @@ body {
   --text-5xl: 3rem; /* 48px */
   --text-6xl: 3.5rem; /* 56px */
   --text-7xl: 4.5rem; /* 72px */
+  --text-8xl: 6rem; /* 96px */
+  --text-9xl: 8rem; /* 128px */
+  --text-10xl: 10rem; /* 160px */
 
   /* Font weights */
   --weight-regular: 400;
@@ -107,4 +112,8 @@ h6 {
 
 body.no-paper-bg {
   background-image: none;
+}
+
+body.paper-bg-christmas {
+  --color-accent: #c9303a;
 }

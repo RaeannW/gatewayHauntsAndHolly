@@ -1,0 +1,85 @@
+.section {
+  background-color: var(--color-black);
+}
+
+.cardWrap {
+  padding: var(--space-12) var(--space-8);
+}
+
+.card {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-12) var(--space-16);
+  background-image: url("/images/decor/scrapWithThumbtack.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.inner {
+  flex: 1;
+  text-align: center;
+}
+
+.title {
+  font-family: var(--font-display-bold), Georgia, serif;
+  font-size: var(--text-8xl);
+  font-weight: var(--weight-regular);
+  color: var(--color-black);
+  margin: 0 0 var(--space-6);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  line-height: var(--leading-tight);
+}
+
+.subtitle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin: 0 0 var(--space-8);
+}
+
+.subtitle p {
+  flex-shrink: 0;
+  max-width: 50ch;
+  margin: 0;
+  font-size: var(--text-base);
+  color: var(--color-black);
+  line-height: var(--leading-normal);
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background: var(--color-black);
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: var(--space-12) var(--space-8);
+    min-height: 400px;
+  }
+
+  .title {
+    font-size: var(--text-5xl);
+  }
+
+  .subtitle {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .subtitle .line {
+    width: 60%;
+    flex: none;
+  }
+}

@@ -16,9 +16,18 @@ const POST_TYPE_LABELS: Record<string, string> = {
   event: "Event",
 };
 
-export default function BlogPostCard({ post }: BlogPostCardProps) {
-  const tagLabel = POST_TYPE_LABELS[post.postType] ?? "Post";
+const RECIPE_SUBCATEGORY_TAGS: Record<string, string> = {
+  dessert: "Dessert",
+  drink: "Drink",
+  appetizer: "Appetizer",
+  meal: "Meal",
+};
 
+export default function BlogPostCard({ post }: BlogPostCardProps) {
+  const tagLabel =
+    post.postType === "recipe" && post.recipeSubcategory
+      ? RECIPE_SUBCATEGORY_TAGS[post.recipeSubcategory]
+      : (POST_TYPE_LABELS[post.postType] ?? "Post");
   return (
     <Link href={`/posts/${post.slug}`} className={styles.card}>
       <div className={styles.inner}>
