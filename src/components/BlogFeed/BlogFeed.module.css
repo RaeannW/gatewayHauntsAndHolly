@@ -8,14 +8,7 @@
   grid-template-columns: repeat(2, 1fr);
   gap: var(--space-8);
   padding: var(--space-12) var(--space-8);
-}
-
-.rowDark {
-  background: var(--color-black);
-}
-
-.rowAccent {
-  background: var(--h-color-orange);
+  background: var(--color-row-dark);
 }
 
 @media (max-width: 768px) {

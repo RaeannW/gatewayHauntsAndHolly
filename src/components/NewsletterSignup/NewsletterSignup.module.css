@@ -49,13 +49,13 @@
 }
 
 .input:focus {
-  border-color: var(--h-color-orange);
+  border-color: var(--color-accent);
 }
 
 .success {
   font-family: var(--font-serif), Georgia, serif;
   font-style: italic;
-  color: var(--h-color-orange);
+  color: var(--color-accent);
   font-size: var(--text-base);
   margin: 0;
 }

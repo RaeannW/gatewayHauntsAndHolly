@@ -10,24 +10,7 @@ body {
   padding: 0;
 }
 
-body {
-  font-family: var(--font-sans), system-ui, sans-serif;
-  background-color: var(--color-cream);
-  background-image:
-    linear-gradient(
-      color-mix(in srgb, var(--color-cream) 65%, transparent),
-      color-mix(in srgb, var(--color-cream) 65%, transparent)
-    ),
-    url("/images/backgrounds/paperBackground.jpeg");
-  background-size: cover;
-  background-position: center top;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-}
-
 :root {
-  --color-accent: var(--h-color-orange);
-
   /* Colors All */
   --color-cream: #faf6ee;
   --color-tan: #c4a57b;
@@ -35,26 +18,30 @@ body {
   --color-black: #1a1714;
 
   /* Halloween Colors */
-  --h-color-dark-plum: #1f1419;
-  --h-color-plum: #3d1b5e;
-  --h-color-mauve: #8b5a7a;
-  --h-color-orange: #c4642d;
+  --h-color-orange: #d26425;
+  --h-color-dark-orange: #9b3d07;
+
+  /* Christmas Colors */
+  --c-color-red: #c2202b;
+  --c-color-dark-red: #8b1620;
+  --c-color-green: #14322a;
+  --c-color-dark-green: #033122;
 
   /* Font sizes */
-  --text-xs: 0.75rem; /* 12px */
-  --text-sm: 0.875rem; /* 14px */
-  --text-base: 1rem; /* 16px */
-  --text-lg: 1.125rem; /* 18px */
-  --text-xl: 1.25rem; /* 20px */
-  --text-2xl: 1.5rem; /* 24px */
-  --text-3xl: 2rem; /* 32px */
-  --text-4xl: 2.5rem; /* 40px */
-  --text-5xl: 3rem; /* 48px */
-  --text-6xl: 3.5rem; /* 56px */
-  --text-7xl: 4.5rem; /* 72px */
-  --text-8xl: 6rem; /* 96px */
-  --text-9xl: 8rem; /* 128px */
-  --text-10xl: 10rem; /* 160px */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 2rem;
+  --text-4xl: 2.5rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.5rem;
+  --text-7xl: 4.5rem;
+  --text-8xl: 6rem;
+  --text-9xl: 8rem;
+  --text-10xl: 10rem;
 
   /* Font weights */
   --weight-regular: 400;
@@ -90,10 +77,30 @@ body {
   /* Container */
   --container-max: 1400px;
   --container-padding: 2rem;
+
+  /* Default theme tokens — Halloween */
+  --color-accent: var(--h-color-orange);
+  --color-row-dark: var(--color-black);
+  --color-row-accent: var(--h-color-orange);
+  --color-button-bg: var(--h-color-orange);
+  --color-button-hover-bg: var(--color-brown);
+  --color-tag-bg: var(--h-color-orange);
+  --color-hero-bg: var(--h-color-dark-orange);
 }
 
 body {
   font-family: var(--font-sans), system-ui, sans-serif;
+  background-color: var(--color-cream);
+  background-image:
+    linear-gradient(
+      color-mix(in srgb, var(--color-cream) 65%, transparent),
+      color-mix(in srgb, var(--color-cream) 65%, transparent)
+    ),
+    url("/images/backgrounds/paperBackground.jpeg");
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 h1,
@@ -110,10 +117,26 @@ h6 {
   font-family: var(--font-display), Georgia, serif;
 }
 
-body.no-paper-bg {
-  background-image: none;
+body.theme-halloween {
+  --color-accent: var(--h-color-orange);
+  --color-row-dark: var(--color-black);
+  --color-row-accent: var(--h-color-orange);
+  --color-button-bg: var(--h-color-orange);
+  --color-button-hover-bg: var(--color-brown);
+  --color-tag-bg: var(--h-color-orange);
+  --color-hero-bg: var(--h-color-dark-orange);
 }
 
-body.paper-bg-christmas {
-  --color-accent: #c9303a;
+body.theme-christmas {
+  --color-accent: var(--c-color-red);
+  --color-row-dark: var(--c-color-dark-green);
+  --color-row-accent: var(--c-color-red);
+  --color-button-bg: var(--c-color-red);
+  --color-button-hover-bg: var(--c-color-dark-green);
+  --color-tag-bg: var(--c-color-red);
+  --color-hero-bg: var(--c-color-dark-red);
+}
+
+body.no-paper-bg {
+  background-image: none;
 }

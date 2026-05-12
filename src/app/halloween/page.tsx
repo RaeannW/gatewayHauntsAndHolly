@@ -1,5 +1,7 @@
+import PageTheme from "@/components/PageTheme/PageTheme";
 import Hero from "@/components/Hero/Hero";
 import FeaturedBlogCard from "@/components/FeaturedBlogCard/FeaturedBlogCard";
+import Garland from "@/components/Garland/Garland";
 import BlogSection from "@/components/BlogSection/BlogSection";
 import RecipesSection from "@/components/RecipesSection/RecipesSection";
 import { Category } from "@/components/CategoriesList/CategoriesList";
@@ -31,6 +33,7 @@ export default function HalloweenPage() {
 
   return (
     <>
+      <PageTheme theme="halloween" />
       <Hero
         title="Halloween"
         subtitle="Tips and Treats to Celebrate the Spookiest Time of the Year"
@@ -49,7 +52,12 @@ export default function HalloweenPage() {
       />
 
       <section className={styles.halloweenFeaturedSection}>
-        {featured && <FeaturedBlogCard post={featured} />}
+        {featured && (
+          <>
+            <Garland src="/images/decor/laceTile.svg" height={60} />
+            <FeaturedBlogCard post={featured} />
+          </>
+        )}
       </section>
 
       <BlogSection

@@ -19,12 +19,7 @@ export default function BlogFeed({ posts, cardsPerRow = 2 }: BlogFeedProps) {
   return (
     <div className={styles.feed}>
       {rows.map((rowPosts, i) => (
-        <div
-          key={i}
-          className={`${styles.row} ${
-            i % 2 === 0 ? styles.rowDark : styles.rowAccent
-          }`}
-        >
+        <div key={i} className={styles.row}>
           {rowPosts.map((post) => (
             <BlogPostCard key={post.slug} post={post} />
           ))}

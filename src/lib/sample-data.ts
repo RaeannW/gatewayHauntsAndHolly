@@ -177,7 +177,7 @@ export const samplePosts: Post[] = [
     excerpt:
       "The buttery little cookies your German grandma used to press into reindeer shapes. The press matters. The almond extract matters more.",
     image: {
-      src: "/images/placeholder-1.jpg",
+      src: "/images/christmasPlaceHolder.jpg",
       alt: "Tray of pastel-colored spritz cookies",
     },
     author: "Eliza Hart",
@@ -195,7 +195,7 @@ export const samplePosts: Post[] = [
     excerpt:
       "Forty years in, the drive-through still feels magical. Here's what's new this season, what's worth the wait, and which night to skip.",
     image: {
-      src: "/images/placeholder-1.jpg",
+      src: "/images/christmasPlaceHolder.jpg",
       alt: "Christmas lights at Tilles Park",
     },
     author: "Marcus Bell",
@@ -215,7 +215,7 @@ export const samplePosts: Post[] = [
     excerpt:
       "Garland, candles, stockings, vintage finds, and the one thing most people forget. A no-stress formula that works whether your style is farmhouse or formal.",
     image: {
-      src: "/images/placeholder-1.jpg",
+      src: "/images/christmasPlaceHolder.jpg",
       alt: "Decorated Christmas mantle with garland and candles",
     },
     author: "Eliza Hart",
@@ -232,7 +232,7 @@ export const samplePosts: Post[] = [
     excerpt:
       "Miracle on Locust, the Sippin' Santa speakeasy, and three more we found tucked into neighborhoods you wouldn't expect. Updated weekly.",
     image: {
-      src: "/images/placeholder-1.jpg",
+      src: "/images/christmasPlaceHolder.jpg",
       alt: "Festive cocktail at a holiday pop-up bar",
     },
     author: "Marcus Bell",

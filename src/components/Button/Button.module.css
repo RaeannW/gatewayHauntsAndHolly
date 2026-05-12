@@ -37,15 +37,14 @@
 }
 
 .primary {
-  background-color: var(--h-color-orange);
-  color: var(--color-black);
-  border-color: var(--h-color-orange);
+  background-color: var(--color-button-bg);
+  color: var(--color-cream);
+  border-color: var(--color-button-bg);
 }
 
 .primary:hover:not(:disabled) {
-  background-color: var(--color-brown);
-  border-color: var(--color-brown);
-  color: var(--color-cream);
+  background-color: var(--color-button-hover-bg);
+  border-color: var(--color-button-hover-bg);
 }
 
 .secondary {
@@ -66,5 +65,5 @@
 }
 
 .ghost:hover:not(:disabled) {
-  color: var(--h-color-orange);
+  color: var(--color-accent);
 }
