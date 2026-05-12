@@ -1,5 +1,6 @@
 .section {
-  background-color: var(--color-black);
+  background-color: var(--color-hero-bg);
+  padding-bottom: var(--space-12);
 }
 
 .cardWrap {
@@ -47,7 +48,7 @@
   flex-shrink: 0;
   max-width: 50ch;
   margin: 0;
-  font-size: var(--text-base);
+  font-size: var(--text-xl);
   color: var(--color-black);
   line-height: var(--leading-normal);
 }

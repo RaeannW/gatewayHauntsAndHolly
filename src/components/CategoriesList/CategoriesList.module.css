@@ -36,11 +36,11 @@
 }
 
 .link:hover {
-  color: var(--h-color-orange);
+  color: var(--color-accent);
 }
 
 .active {
-  color: var(--h-color-orange);
+  color: var(--color-accent);
   font-weight: var(--weight-semibold);
 }
 

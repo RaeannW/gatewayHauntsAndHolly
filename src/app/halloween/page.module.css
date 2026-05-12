@@ -5,6 +5,6 @@
 .halloweenFeaturedSection {
   background-image: url("/images/backgrounds/pumpkinBackground.jpeg");
   background-repeat: repeat;
-  padding: var(--space-16) 0;
-  background-size: 700px auto;
+  background-size: 600px auto;
+  padding: 0 0 var(--space-16);
 }

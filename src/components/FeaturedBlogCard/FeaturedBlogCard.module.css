@@ -39,7 +39,7 @@
   font-family: var(--font-display), Georgia, serif;
   font-size: var(--text-base);
   font-weight: var(--weight-bold);
-  color: var(--h-color-orange);
+  color: var(--color-accent);
   letter-spacing: var(--tracking-wide);
 }
 

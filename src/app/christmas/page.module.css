@@ -1,0 +1,10 @@
+.background {
+  background-color: var(--color-cream);
+}
+
+.christmasFeaturedSection {
+  background-image: url("/images/backgrounds/christmasPlaidBackground.jpeg");
+  background-repeat: repeat;
+  background-size: 700px auto;
+  padding: 0 0 var(--space-16);
+}
