@@ -1,3 +1,4 @@
+import Image from "next/image";
 import HeroDivider from "./HeroDivider";
 import HeroCarousel, { CarouselSlide } from "./HeroCarousel";
 import Countdown from "@/components/Countdown/Countdown";
@@ -7,7 +8,13 @@ import styles from "./Hero.module.css";
 interface HeroProps {
   title: string;
   subtitle: string;
-  description: string;
+  descriptionParagraphs: [string, string];
+  countdownImage?: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+  };
   slides: CarouselSlide[];
   countdownTarget?: Holiday;
   countdownVariant?: "compact" | "feature";
@@ -16,7 +23,8 @@ interface HeroProps {
 export default function Hero({
   title,
   subtitle,
-  description,
+  descriptionParagraphs,
+  countdownImage,
   slides,
   countdownTarget,
   countdownVariant = "compact",
@@ -36,8 +44,24 @@ export default function Hero({
       <HeroDivider variant="double" />
 
       <div className={styles.bottom}>
-        <p className={styles.description}>{description}</p>
-        <div className={styles.countdownWrap}>
+        <div className={styles.column}>
+          <p className={styles.paragraph}>{descriptionParagraphs[0]}</p>
+        </div>
+
+        <div className={styles.column}>
+          <p className={styles.paragraph}>{descriptionParagraphs[1]}</p>
+        </div>
+
+        <div className={styles.countdownColumn}>
+          {countdownImage && (
+            <Image
+              src={countdownImage.src}
+              alt={countdownImage.alt}
+              width={countdownImage.width}
+              height={countdownImage.height}
+              className={styles.countdownImage}
+            />
+          )}
           <Countdown target={countdownTarget} variant={countdownVariant} />
         </div>
       </div>

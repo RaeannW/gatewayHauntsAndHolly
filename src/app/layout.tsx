@@ -1,14 +1,8 @@
 import type { Metadata } from "next";
-import { Mulish, Alegreya, Alegreya_SC, Rozha_One } from "next/font/google";
+import { Alegreya, Rozha_One } from "next/font/google";
 import Nav from "@/components/Nav/Nav";
 
 import "./globals.css";
-
-const mulish = Mulish({
-  subsets: ["latin"],
-  variable: "--font-sans",
-  weight: ["400", "500", "600", "700"],
-});
 
 const alegreya = Alegreya({
   subsets: ["latin"],
@@ -17,16 +11,10 @@ const alegreya = Alegreya({
   style: ["normal", "italic"],
 });
 
-const alegreyaSC = Alegreya_SC({
-  subsets: ["latin"],
-  variable: "--font-display",
-  weight: ["400", "500", "700", "900"],
-});
-
 const rozhaOne = Rozha_One({
   subsets: ["latin"],
   variable: "--font-display-bold",
-  weight: ["400"], // Rozha One only has 400
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
@@ -40,10 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${mulish.variable} ${alegreya.variable} ${alegreyaSC.variable} ${rozhaOne.variable}`}
-    >
+    <html lang="en" className={`${alegreya.variable} ${rozhaOne.variable}`}>
       <body>
         <Nav />
         <main>{children}</main>
