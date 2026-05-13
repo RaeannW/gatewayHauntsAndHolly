@@ -3,8 +3,10 @@
   align-items: center;
   justify-content: center;
   gap: var(--space-2);
+  font-family: var(--font-serif), Georgia, serif;
   font-weight: var(--weight-semibold);
-  letter-spacing: var(--tracking-normal);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
   border: 2px solid transparent;
   border-radius: 2px;
   cursor: pointer;

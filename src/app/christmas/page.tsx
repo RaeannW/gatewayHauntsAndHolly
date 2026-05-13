@@ -36,8 +36,17 @@ export default function ChristmasPage() {
       <PageTheme theme="christmas" />
       <Hero
         title="Christmas"
-        subtitle="Tips and Treats to Celebrate the Most Wonderful Time of the Year"
-        description="Pop-up bars, pumpkin patches, costume parties, and the haunted history of the city. Everything you need for a spooky season worth remembering."
+        subtitle="The Season of Lights, Traditions, and St. Louis Magic"
+        descriptionParagraphs={[
+          "Light displays, holiday markets, cookie swaps, and family traditions. Your guide to making merry across the metro. Light displays, holiday markets, cookie swaps, and family traditions. Your guide to making merry across the metro.",
+          "Whether you're chasing the perfect tree or planning a quiet evening in, we've gathered the season's best for every kind of celebration. Whether you're chasing the perfect tree or planning a quiet evening in, we've gathered the season's best for every kind of celebration.",
+        ]}
+        countdownImage={{
+          src: "/images/decor/alarm.png",
+          alt: "Christmas ornament",
+          width: 70,
+          height: 70,
+        }}
         countdownTarget="christmas"
         countdownVariant="compact"
         slides={[

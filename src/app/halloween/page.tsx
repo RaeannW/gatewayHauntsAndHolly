@@ -37,7 +37,16 @@ export default function HalloweenPage() {
       <Hero
         title="Halloween"
         subtitle="Tips and Treats to Celebrate the Spookiest Time of the Year"
-        description="Pop-up bars, pumpkin patches, costume parties, and the haunted history of the city. Everything you need for a spooky season worth remembering."
+        descriptionParagraphs={[
+          "Pop-up bars, pumpkin patches, costume parties, and the haunted history of the city. Everything you need for a spooky season worth remembering. Pop-up bars, pumpkin patches, costume parties, and the haunted history of the city. Everything you need for a spooky season worth remembering.",
+          "From family-friendly hayrides to adults-only haunts, we cover the corners of the metro where Halloween comes alive each fall. From family-friendly hayrides to adults-only haunts, we cover the corners of the metro where Halloween comes alive each fall.",
+        ]}
+        countdownImage={{
+          src: "/images/decor/alarm.png",
+          alt: "Halloween pumpkin",
+          width: 70,
+          height: 70,
+        }}
         countdownTarget="halloween"
         countdownVariant="compact"
         slides={[

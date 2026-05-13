@@ -40,35 +40,59 @@
 
 .bottom {
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 3rem;
-  align-items: center;
-  padding: 2rem 0;
+  grid-template-columns: 1fr 1fr auto;
+  gap: var(--space-8);
+  align-items: start;
+  padding: var(--space-8) 0;
 }
 
-.description {
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.paragraph {
   font-family: var(--font-serif), Georgia, serif;
-  font-size: var(--text-xl);
-  line-height: var(--leading-normal, 1.6);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-black);
   margin: 0;
-  max-width: 60ch;
 }
 
-.countdownWrap {
-  flex-shrink: 0;
+.countdownColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 280px;
+  margin-top: -2rem;
 }
 
-@media (max-width: 768px) {
-  .subtitle {
-    font-size: var(--text-2xl);
+.countdownImage {
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .bottom {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
   }
+
+  .countdownColumn {
+    grid-column: span 2;
+    min-width: 0;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 640px) {
   .bottom {
     grid-template-columns: 1fr;
-    gap: 2rem;
-    text-align: center;
   }
-  .description {
-    max-width: none;
-    margin: 0 auto;
+
+  .countdownColumn {
+    grid-column: span 1;
   }
 }
