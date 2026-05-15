@@ -45,6 +45,16 @@ export interface Post {
   sponsored?: boolean;
   readTime?: number;
 
+  // Recipe-specific
+  recipeSubcategory?: RecipeSubcategory;
+  prepTime?: number;
+  cookTime?: number;
+  servings?: number;
+  servingUnit?: string;
+  ingredients?: string[];
+  instructions?: string[];
+  notes?: string;
+
   // Review-specific (only used when postType === "review")
   rating?: number; // 1-5
   reviewSubject?: string;
@@ -54,9 +64,6 @@ export interface Post {
   eventLocation?: string;
   eventNeighborhood?: string;
   ticketUrl?: string;
-
-  // Recipe-specific
-  recipeSubcategory?: RecipeSubcategory;
 }
 
 // Recipe subcategories in display order
@@ -80,7 +87,7 @@ export const samplePosts: Post[] = [
     slug: "witches-finger-cookies",
     title: "Witches' Finger Cookies for Your Next Gathering",
     excerpt:
-      "A buttery shortbread base, a sliced almond fingernail, and a drop of strawberry jam. Easier than they look, more dramatic than they have any right to be.",
+      "A buttery shortbread base, a sliced almond fingernail, and a drop of strawberry jam.",
     image: {
       src: "/images/placeholder-1.jpg",
       alt: "Plate of witches finger cookies on a black surface",
@@ -94,6 +101,37 @@ export const samplePosts: Post[] = [
     audience: ["family", "adults"],
     featured: true,
     readTime: 6,
+    // Recipe data:
+    prepTime: 20,
+    cookTime: 15,
+    servings: 24,
+    servingUnit: "cookies",
+    ingredients: [
+      "1 cup unsalted butter, softened",
+      "2/3 cup granulated sugar",
+      "1 large egg",
+      "1 tsp vanilla extract",
+      "1 tsp almond extract",
+      "2 1/2 cups all-purpose flour",
+      "1 tsp baking powder",
+      "1/2 tsp salt",
+      "24 sliced almonds",
+      "1/4 cup strawberry jam",
+      "Red food coloring (optional)",
+    ],
+    instructions: [
+      "Preheat oven to 325°F. Line two baking sheets with parchment paper.",
+      "In a large bowl, cream butter and sugar until light and fluffy, about 3 minutes.",
+      "Beat in egg, vanilla, and almond extract until well combined.",
+      "In a separate bowl, whisk together flour, baking powder, and salt.",
+      "Gradually add dry ingredients to the wet mixture, mixing just until combined. Cover and chill dough for 30 minutes.",
+      "Roll dough into small finger-shaped logs, about 3 inches long. Make small indentations to mimic knuckles using a knife.",
+      "Press a sliced almond into one end of each finger for the fingernail.",
+      "Bake for 12-15 minutes until edges are lightly golden. Cool on baking sheets for 5 minutes before transferring.",
+      "Once cool, dab a small amount of strawberry jam under each almond fingernail so it 'oozes' slightly. Optional: paint nail with red food coloring.",
+    ],
+    notes:
+      "These get more dramatic the longer they sit — the jam settles in and the 'fingernails' really start to look unsettling. Make them the morning of your gathering for maximum effect. Store in an airtight container for up to a week.",
   },
   {
     slug: "the-darkness-2026-review",
@@ -378,4 +416,10 @@ export function getRecipeSubcategoryCounts(
       .length,
     meal: recipes.filter((p) => p.recipeSubcategory === "meal").length,
   };
+}
+
+export function getPostHref(post: Post): string {
+  return post.postType === "recipe"
+    ? `/recipes/${post.slug}`
+    : `/posts/${post.slug}`;
 }

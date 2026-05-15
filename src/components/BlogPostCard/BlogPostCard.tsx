@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Post } from "@/lib/sample-data";
+import { Post, getPostHref } from "@/lib/sample-data";
 import styles from "./BlogPostCard.module.css";
 
 interface BlogPostCardProps {
@@ -28,8 +28,11 @@ export default function BlogPostCard({ post }: BlogPostCardProps) {
     post.postType === "recipe" && post.recipeSubcategory
       ? RECIPE_SUBCATEGORY_TAGS[post.recipeSubcategory]
       : (POST_TYPE_LABELS[post.postType] ?? "Post");
+
+  const href = getPostHref(post);
+
   return (
-    <Link href={`/posts/${post.slug}`} className={styles.card}>
+    <Link href={href} className={styles.card}>
       <div className={styles.inner}>
         <div className={styles.imageWrap}>
           <span className={styles.tag}>{tagLabel}</span>

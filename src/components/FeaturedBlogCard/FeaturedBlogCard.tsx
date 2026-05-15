@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Button from "@/components/Button/Button";
-import { Post } from "@/lib/sample-data";
+import { Post, getPostHref } from "@/lib/sample-data";
 import styles from "./FeaturedBlogCard.module.css";
 
 interface FeaturedBlogCardProps {
@@ -17,6 +17,8 @@ export default function FeaturedBlogCard({
     day: "numeric",
     year: "numeric",
   });
+
+  const href = getPostHref(post);
 
   return (
     <article className={styles.card}>
@@ -46,7 +48,7 @@ export default function FeaturedBlogCard({
             )}
           </div>
 
-          <Button as="link" href={`/posts/${post.slug}`} variant="primary">
+          <Button as="link" href={href} variant="primary">
             Read Now
           </Button>
         </div>
