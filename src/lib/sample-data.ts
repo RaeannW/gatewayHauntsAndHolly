@@ -29,6 +29,21 @@ export type PostType =
 
 export type RecipeSubcategory = "dessert" | "drink" | "appetizer" | "meal";
 
+export interface RecipeIngredient {
+  text: string;
+  affiliateUrl?: string;
+}
+
+export interface RecipeTool {
+  name: string;
+  description?: string;
+  image: {
+    src: string;
+    alt: string;
+  };
+  affiliateUrl: string;
+}
+
 export interface Post {
   slug: string;
   title: string;
@@ -51,7 +66,8 @@ export interface Post {
   cookTime?: number;
   servings?: number;
   servingUnit?: string;
-  ingredients?: string[];
+  ingredients?: (string | RecipeIngredient)[];
+  tools?: RecipeTool[];
   instructions?: string[];
   notes?: string;
 
@@ -107,17 +123,39 @@ export const samplePosts: Post[] = [
     servings: 24,
     servingUnit: "cookies",
     ingredients: [
-      "1 cup unsalted butter, softened",
-      "2/3 cup granulated sugar",
-      "1 large egg",
-      "1 tsp vanilla extract",
-      "1 tsp almond extract",
-      "2 1/2 cups all-purpose flour",
-      "1 tsp baking powder",
-      "1/2 tsp salt",
-      "24 sliced almonds",
-      "1/4 cup strawberry jam",
-      "Red food coloring (optional)",
+      { text: "1 cup unsalted butter, softened" },
+      { text: "2/3 cup granulated sugar" },
+      { text: "Red food coloring", affiliateUrl: "https://amzn.to/your-link" },
+      { text: "24 sliced almonds" },
+    ],
+    tools: [
+      {
+        name: "Finger-shaped cookie mold",
+        description: "Silicone, food-safe, dishwasher-friendly",
+        image: {
+          src: "/images/placeholder-1.jpg",
+          alt: "Silicone finger-shaped cookie mold",
+        },
+        affiliateUrl: "https://amzn.to/your-link",
+      },
+      {
+        name: "Gel food coloring set",
+        description: "Vibrant colors that don't water down batter",
+        image: {
+          src: "/images/placeholder-1.jpg",
+          alt: "Set of gel food colorings in various shades",
+        },
+        affiliateUrl: "https://amzn.to/another-link",
+      },
+      {
+        name: "Gel food coloring set",
+        description: "Vibrant colors that don't water down batter",
+        image: {
+          src: "/images/placeholder-1.jpg",
+          alt: "Set of gel food colorings in various shades",
+        },
+        affiliateUrl: "https://amzn.to/another-link",
+      },
     ],
     instructions: [
       "Preheat oven to 325°F. Line two baking sheets with parchment paper.",
