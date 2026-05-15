@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Button from "../Button/Button";
 import { Post, RECIPE_SUBCATEGORY_LABELS } from "@/lib/sample-data";
 import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
 import styles from "./RecipeTemplate.module.css";
@@ -34,7 +35,6 @@ export default function RecipeTemplate({ recipe }: RecipeTemplateProps) {
     { label: recipe.title },
   ];
 
-  // JSON-LD schema for Google rich recipe cards
   const recipeSchema = {
     "@context": "https://schema.org",
     "@type": "Recipe",
@@ -56,7 +56,9 @@ export default function RecipeTemplate({ recipe }: RecipeTemplateProps) {
       ? `${recipe.servings} ${recipe.servingUnit ?? "servings"}`
       : undefined,
     recipeCategory: subcategoryLabel,
-    recipeIngredient: recipe.ingredients,
+    recipeIngredient: recipe.ingredients?.map((item) =>
+      typeof item === "string" ? item : item.text,
+    ),
     recipeInstructions: recipe.instructions?.map((step, i) => ({
       "@type": "HowToStep",
       position: i + 1,
@@ -75,12 +77,11 @@ export default function RecipeTemplate({ recipe }: RecipeTemplateProps) {
         <div className={styles.breadcrumbs}>
           <Breadcrumb items={breadcrumbItems} />
         </div>
+
         <div className={styles.layout}>
-          <aside className={styles.sidebar} aria-hidden="true"></aside>
+          <aside className={styles.sidebar} aria-hidden="true" />
 
           <div className={styles.content}>
-            <aside className={styles.sidebar} aria-hidden="true" />
-
             <span className={styles.category}>{subcategoryLabel}</span>
             <h1 className={styles.title}>{recipe.title}</h1>
             <p className={styles.intro}>{recipe.excerpt}</p>
@@ -129,9 +130,27 @@ export default function RecipeTemplate({ recipe }: RecipeTemplateProps) {
               <div className={styles.ingredients}>
                 <h2 className={styles.sectionHeading}>Ingredients</h2>
                 <ul className={styles.ingredientsList}>
-                  {recipe.ingredients?.map((item, i) => (
-                    <li key={i}>{item}</li>
-                  ))}
+                  {recipe.ingredients?.map((item, i) => {
+                    if (typeof item === "string") {
+                      return <li key={i}>{item}</li>;
+                    }
+                    return (
+                      <li key={i}>
+                        {item.affiliateUrl ? (
+                          <a
+                            href={item.affiliateUrl}
+                            target="_blank"
+                            rel="noopener sponsored"
+                            className={styles.ingredientLink}
+                          >
+                            {item.text}
+                          </a>
+                        ) : (
+                          item.text
+                        )}
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
 
@@ -145,6 +164,57 @@ export default function RecipeTemplate({ recipe }: RecipeTemplateProps) {
               </div>
             </div>
 
+            {recipe.tools && recipe.tools.length > 0 && (
+              <div className={styles.tools}>
+                <h2 className={styles.sectionHeading}>Tools & Supplies</h2>
+                <p className={styles.toolsIntro}>
+                  Specialty items used in this recipe. Some links may be
+                  affiliated.
+                </p>
+                <div className={styles.toolsGrid}>
+                  {recipe.tools.map((tool, i) => (
+                    <div key={i} className={styles.toolCard}>
+                      <Image
+                        src="/images/decor/thumbTack.png"
+                        alt=""
+                        width={40}
+                        height={40}
+                        className={styles.thumbtack}
+                        aria-hidden="true"
+                      />
+                      <div className={styles.toolImage}>
+                        <Image
+                          src={tool.image.src}
+                          alt={tool.image.alt}
+                          fill
+                          sizes="200px"
+                          style={{ objectFit: "cover" }}
+                        />
+                      </div>
+                      <div className={styles.toolInfo}>
+                        <h3 className={styles.toolName}>{tool.name}</h3>
+                        {tool.description && (
+                          <p className={styles.toolDescription}>
+                            {tool.description}
+                          </p>
+                        )}
+                        <Button
+                          as="link"
+                          href={tool.affiliateUrl}
+                          variant="primary"
+                          size="sm"
+                          external
+                          className={styles.toolButton}
+                        >
+                          Shop
+                        </Button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {recipe.notes && (
               <div className={styles.notes}>
                 <h2 className={styles.sectionHeading}>Notes</h2>
@@ -153,7 +223,9 @@ export default function RecipeTemplate({ recipe }: RecipeTemplateProps) {
             )}
 
             <div className={styles.backLink}>
-              {holidayLabel ? (
+              {holidayLabel &&
+              (recipe.holiday === "halloween" ||
+                recipe.holiday === "christmas") ? (
                 <Link href={`/${recipe.holiday}#recipes`}>
                   ← Back to {holidayLabel} Recipes
                 </Link>

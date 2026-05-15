@@ -17,11 +17,13 @@ interface ButtonAsButton extends BaseProps {
   type?: "button" | "submit" | "reset";
   disabled?: boolean;
   href?: never;
+  external?: never;
 }
 
 interface ButtonAsLink extends BaseProps {
   as: "link";
   href: string;
+  external?: boolean;
   onClick?: never;
   type?: never;
   disabled?: never;
@@ -36,6 +38,19 @@ export default function Button(props: ButtonProps) {
     `${styles.button} ${styles[variant]} ${styles[size]} ${className}`.trim();
 
   if (props.as === "link") {
+    if (props.external) {
+      return (
+        <a
+          href={props.href}
+          target="_blank"
+          rel="noopener sponsored"
+          className={classes}
+        >
+          {children}
+        </a>
+      );
+    }
+
     return (
       <Link href={props.href} className={classes}>
         {children}

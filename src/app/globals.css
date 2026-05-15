@@ -16,6 +16,7 @@ body {
   --color-tan: #c4a57b;
   --color-brown: #6f5836;
   --color-black: #1a1714;
+  --color-white: #ffffff;
 
   /* Halloween Colors */
   --h-color-orange: #d26425;
@@ -26,6 +27,9 @@ body {
   --c-color-dark-red: #8b1620;
   --c-color-green: #14322a;
   --c-color-dark-green: #033122;
+
+  /* Transparent tints */
+  --color-tan-faded: color-mix(in srgb, var(--color-tan) 15%, transparent);
 
   /* Font sizes */
   --text-xs: 0.75rem;
