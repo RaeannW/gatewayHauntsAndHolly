@@ -1,0 +1,43 @@
+.figure {
+  margin: 0;
+}
+
+.imageWrapper {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: var(--color-black);
+}
+
+.figure[data-align="center"] .imageWrapper {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.figure[data-align="left"] .imageWrapper {
+  width: 50%;
+  margin-right: auto;
+}
+
+.figure[data-align="right"] .imageWrapper {
+  width: 50%;
+  margin-left: auto;
+}
+
+.caption {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: var(--text-sm);
+  font-style: italic;
+  color: var(--color-black);
+  opacity: 0.7;
+  text-align: center;
+  margin-top: var(--space-2);
+}
+
+@media (max-width: 768px) {
+  .figure[data-align="center"] .imageWrapper,
+  .figure[data-align="left"] .imageWrapper,
+  .figure[data-align="right"] .imageWrapper {
+    width: 100%;
+  }
+}
