@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import Button from "../Button/Button";
 import PinterestButton from "@/components/PinterestButton/PinterestButton";
 import NotebookPage from "@/components/NotebookPage/NotebookPage";
 import Notes from "@/components/Notes/Notes";

@@ -1,0 +1,46 @@
+.unorderedList,
+.orderedList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.unorderedList li {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: var(--text-base);
+  line-height: var(--leading-snug);
+  padding-left: var(--space-4);
+  position: relative;
+}
+
+.unorderedList li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+}
+
+.orderedList {
+  counter-reset: step;
+}
+
+.orderedList li {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  padding-left: var(--space-8);
+  position: relative;
+  counter-increment: step;
+}
+
+.orderedList li::before {
+  content: counter(step) ".";
+  position: absolute;
+  left: 0;
+  font-weight: var(--weight-bold);
+  color: var(--color-accent);
+  font-size: var(--text-lg);
+}
