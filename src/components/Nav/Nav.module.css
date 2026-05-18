@@ -2,6 +2,7 @@
   width: 100%;
   position: relative;
   background: transparent;
+  margin-top: 10px;
 }
 
 .nav {
@@ -48,9 +49,30 @@
   font-weight: var(--weight-bold);
 }
 
-.logo {
+.center {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
   justify-self: center;
+  align-self: stretch;
+}
+
+.verticalRule {
+  width: 0.1rem;
+  background-color: var(--color-black);
+  align-self: stretch;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.logo {
   display: block;
+  flex-shrink: 0;
 }
 
 .divider {
@@ -59,6 +81,14 @@
   width: 100%;
   padding: 0 0.5rem 1rem;
   color: var(--color-black);
+}
+
+.dividerTop {
+  padding: 1rem 0.5rem 0;
+}
+
+.dividerTop .flourish {
+  transform: rotate(180deg);
 }
 
 .line {
@@ -87,7 +117,6 @@
   display: none;
   align-items: center;
   justify-content: center;
-  padding: 1rem 1.5rem;
   position: relative;
 }
 
@@ -102,7 +131,7 @@
   padding: 0.5rem;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
 }
 
 .hamburger span {
@@ -119,7 +148,6 @@
 
 .mobileMenu {
   display: none;
-  border-top: 1px solid currentColor;
 }
 
 .mobileMenu ul {
@@ -152,14 +180,24 @@
     gap: 1.25rem;
     font-size: var(--text-sm);
   }
+  .center {
+    gap: 0.75rem;
+  }
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 @media (max-width: 768px) {
   .nav {
     display: none;
   }
-  .divider {
+  /* .divider {
     display: none;
+  } */
+  .dividerTop {
+    display: flex;
   }
   .mobileBar {
     display: flex;

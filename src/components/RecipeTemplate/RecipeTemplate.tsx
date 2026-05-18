@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import Button from "../Button/Button";
+import PinterestButton from "@/components/PinterestButton/PinterestButton";
+import { SITE_URL } from "@/lib/constants";
 import { Post, RECIPE_SUBCATEGORY_LABELS } from "@/lib/sample-data";
 import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
 import styles from "./RecipeTemplate.module.css";
@@ -94,6 +96,11 @@ export default function RecipeTemplate({ recipe }: RecipeTemplateProps) {
                 sizes="(max-width: 768px) 100vw, 800px"
                 style={{ objectFit: "cover" }}
                 priority
+              />
+              <PinterestButton
+                url={`${SITE_URL}/recipes/${recipe.slug}`}
+                media={`${SITE_URL}${recipe.image.src}`}
+                description={`${recipe.title} — ${recipe.excerpt}`}
               />
             </div>
 
@@ -217,6 +224,14 @@ export default function RecipeTemplate({ recipe }: RecipeTemplateProps) {
 
             {recipe.notes && (
               <div className={styles.notes}>
+                <Image
+                  src="/images/decor/tape.png"
+                  alt=""
+                  width={120}
+                  height={40}
+                  className={styles.tape}
+                  aria-hidden="true"
+                />
                 <h2 className={styles.sectionHeading}>Notes</h2>
                 <p>{recipe.notes}</p>
               </div>
