@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Button from "../Button/Button";
+import Button from "@/components/ui/Button/Button";
 import styles from "./ShopCard.module.css";
 
 interface ShopCardProps {

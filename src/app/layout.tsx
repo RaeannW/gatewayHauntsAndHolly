@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Alegreya, Rozha_One } from "next/font/google";
-import Nav from "@/components/Nav/Nav";
+import Nav from "@/components/ui/Nav/Nav";
 
 import "./globals.css";
 

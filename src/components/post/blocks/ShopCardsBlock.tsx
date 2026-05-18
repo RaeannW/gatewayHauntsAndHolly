@@ -1,4 +1,4 @@
-import ShopCard from "@/components/ShopCard/ShopCard";
+import ShopCard from "@/components/post/ShopCard/ShopCard";
 import { RecipeTool } from "@/lib/sample-data";
 import styles from "./ShopCardsBlock.module.css";
 

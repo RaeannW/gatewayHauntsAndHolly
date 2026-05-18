@@ -1,7 +1,7 @@
 import { Post, RecipeSubcategory } from "@/lib/sample-data";
-import BlogPostCard from "@/components/BlogPostCard/BlogPostCard";
-import RecipeTabs from "@/components/RecipeTabs/RecipeTabs";
-import RecipesHero from "@/components/RecipesHero/RecipesHero";
+import BlogPostCard from "@/components/blog/BlogPostCard/BlogPostCard";
+import RecipeTabs from "@/components/recipe/RecipeTabs/RecipeTabs";
+import RecipesHero from "@/components/recipe/RecipesHero/RecipesHero";
 import styles from "./RecipesSection.module.css";
 
 interface RecipesSectionProps {

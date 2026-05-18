@@ -343,11 +343,13 @@ export const samplePosts: Post[] = [
       {
         type: "shopCards",
         heading: "Supplies Used",
-        intro: "Everything linked below is what I actually use. Some links are affiliated.",
+        intro:
+          "Everything linked below is what I actually use. Some links are affiliated.",
         items: [
           {
             name: "Activated charcoal powder",
-            description: "Food-grade, for making black salt — mixes easily into sea salt",
+            description:
+              "Food-grade, for making black salt — mixes easily into sea salt",
             image: {
               src: "/images/placeholder-1.jpg",
               alt: "Bag of activated charcoal powder",

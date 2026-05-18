@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import PinterestButton from "@/components/PinterestButton/PinterestButton";
-import NotebookPage from "@/components/NotebookPage/NotebookPage";
-import Notes from "@/components/Notes/Notes";
-import ShopCard from "@/components/ShopCard/ShopCard";
+import PinterestButton from "@/components/ui/PinterestButton/PinterestButton";
+import NotebookPage from "@/components/post/NotebookPage/NotebookPage";
+import Notes from "@/components/post/Notes/Notes";
+import ShopCard from "@/components/post/ShopCard/ShopCard";
 import { SITE_URL } from "@/lib/constants";
 import { Post, RECIPE_SUBCATEGORY_LABELS } from "@/lib/sample-data";
-import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
+import Breadcrumb from "@/components/ui/Breadcrumb/Breadcrumb";
 import styles from "./RecipeTemplate.module.css";
 
 interface RecipeTemplateProps {
