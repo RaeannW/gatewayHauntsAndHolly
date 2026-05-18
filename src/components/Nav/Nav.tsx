@@ -11,6 +11,22 @@ export default function Nav() {
 
   return (
     <header className={styles.header}>
+      <div
+        className={`${styles.divider} ${styles.dividerTop}`}
+        aria-hidden="true"
+      >
+        <span className={styles.diamond} />
+        <span className={styles.line} />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/nav/flourish.svg"
+          alt=""
+          className={styles.flourish}
+        />
+        <span className={styles.line} />
+        <span className={styles.diamond} />
+      </div>
+
       <nav className={styles.nav} aria-label="Main navigation">
         <ul className={styles.navLeft}>
           <li>
@@ -24,29 +40,53 @@ export default function Nav() {
           </li>
         </ul>
 
-        <Link
-          href="/"
-          className={styles.logo}
-          aria-label="Gateway Haunts and Holly home"
-        >
+        <div className={styles.center}>
+          <span className={styles.verticalRule} aria-hidden="true" />
+
           <Image
-            src="/images/logos/gatewayhhLogo.svg"
-            alt="Gateway Haunts and Holly"
-            width={160}
-            height={64}
-            priority
+            src="/images/nav/fleur.svg"
+            alt=""
+            width={32}
+            height={32}
+            className={styles.icon}
+            aria-hidden="true"
           />
-        </Link>
+
+          <Link
+            href="/"
+            className={styles.logo}
+            aria-label="Gateway Haunts and Holly home"
+          >
+            <Image
+              src="/images/logos/gatewayhhLogo.svg"
+              alt="Gateway Haunts and Holly"
+              width={160}
+              height={64}
+              priority
+            />
+          </Link>
+
+          <Image
+            src="/images/nav/fleur.svg"
+            alt=""
+            width={32}
+            height={32}
+            className={styles.icon}
+            aria-hidden="true"
+          />
+
+          <span className={styles.verticalRule} aria-hidden="true" />
+        </div>
 
         <ul className={styles.navRight}>
           <li>
             <Link href="/recipes">Recipes</Link>
           </li>
           <li>
-            <Link href="/diy">DIY</Link>
+            <Link href="/about">About</Link>
           </li>
           <li>
-            <Link href="/more">More</Link>
+            <Link href="/contact">Contact</Link>
           </li>
         </ul>
       </nav>
@@ -116,13 +156,13 @@ export default function Nav() {
               </Link>
             </li>
             <li>
-              <Link href="/diy" onClick={closeMenu}>
-                DIY
+              <Link href="/about" onClick={closeMenu}>
+                About
               </Link>
             </li>
             <li>
-              <Link href="/more" onClick={closeMenu}>
-                More
+              <Link href="/contact" onClick={closeMenu}>
+                Contact
               </Link>
             </li>
           </ul>
