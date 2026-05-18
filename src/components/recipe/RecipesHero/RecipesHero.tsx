@@ -1,5 +1,5 @@
-import Button from "@/components/Button/Button";
-import Garland from "@/components/Garland/Garland";
+import Button from "@/components/ui/Button/Button";
+import Garland from "@/components/ui/Garland/Garland";
 import styles from "./RecipesHero.module.css";
 
 interface RecipesHeroProps {

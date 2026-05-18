@@ -1,10 +1,10 @@
-import PageTheme from "@/components/PageTheme/PageTheme";
-import Hero from "@/components/Hero/Hero";
-import FeaturedBlogCard from "@/components/FeaturedBlogCard/FeaturedBlogCard";
-import Garland from "@/components/Garland/Garland";
-import BlogSection from "@/components/BlogSection/BlogSection";
-import RecipesSection from "@/components/RecipesSection/RecipesSection";
-import { Category } from "@/components/CategoriesList/CategoriesList";
+import PageTheme from "@/components/ui/PageTheme/PageTheme";
+import Hero from "@/components/ui/Hero/Hero";
+import FeaturedBlogCard from "@/components/blog/FeaturedBlogCard/FeaturedBlogCard";
+import Garland from "@/components/ui/Garland/Garland";
+import BlogSection from "@/components/blog/BlogSection/BlogSection";
+import RecipesSection from "@/components/recipe/RecipesSection/RecipesSection";
+import { Category } from "@/components/blog/CategoriesList/CategoriesList";
 import {
   getFeaturedPosts,
   getPostsByHoliday,

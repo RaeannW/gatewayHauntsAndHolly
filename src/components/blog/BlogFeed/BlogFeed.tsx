@@ -1,5 +1,5 @@
 import { Post } from "@/lib/sample-data";
-import BlogPostCard from "@/components/BlogPostCard/BlogPostCard";
+import BlogPostCard from "@/components/blog/BlogPostCard/BlogPostCard";
 import styles from "./BlogFeed.module.css";
 
 interface BlogFeedProps {

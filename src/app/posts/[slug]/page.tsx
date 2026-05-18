@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import PostTemplate from "@/components/PostTemplate/PostTemplate";
+import PostTemplate from "@/components/post/PostTemplate/PostTemplate";
 import { getPostBySlug, samplePosts } from "@/lib/sample-data";
 
 interface PostPageProps {

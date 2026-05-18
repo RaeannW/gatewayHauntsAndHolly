@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import PinterestButton from "@/components/PinterestButton/PinterestButton";
-import NotebookPage from "@/components/NotebookPage/NotebookPage";
-import PostBody from "@/components/PostBody/PostBody";
+import PinterestButton from "@/components/ui/PinterestButton/PinterestButton";
+import NotebookPage from "@/components/post/NotebookPage/NotebookPage";
+import PostBody from "@/components/post/PostBody/PostBody";
 import { SITE_URL } from "@/lib/constants";
 import { Post, POST_TYPE_LABELS } from "@/lib/sample-data";
-import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
+import Breadcrumb from "@/components/ui/Breadcrumb/Breadcrumb";
 import styles from "./PostTemplate.module.css";
 
 interface PostTemplateProps {

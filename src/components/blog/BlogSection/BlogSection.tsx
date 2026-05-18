@@ -1,8 +1,8 @@
 import { Post } from "@/lib/sample-data";
-import BlogSidebar from "@/components/BlogSidebar/BlogSidebar";
-import BlogFeed from "@/components/BlogFeed/BlogFeed";
-import Garland from "@/components/Garland/Garland";
-import { Category } from "@/components/CategoriesList/CategoriesList";
+import BlogSidebar from "@/components/blog/BlogSidebar/BlogSidebar";
+import BlogFeed from "@/components/blog/BlogFeed/BlogFeed";
+import Garland from "@/components/ui/Garland/Garland";
+import { Category } from "@/components/blog/CategoriesList/CategoriesList";
 import styles from "./BlogSection.module.css";
 
 interface BlogSectionProps {

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Button from "@/components/Button/Button";
+import Button from "@/components/ui/Button/Button";
 import styles from "./NewsletterSignup.module.css";
 
 export default function NewsletterSignup() {

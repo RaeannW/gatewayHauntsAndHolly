@@ -1,7 +1,7 @@
 import Image from "next/image";
 import HeroDivider from "./HeroDivider";
 import HeroCarousel, { CarouselSlide } from "./HeroCarousel";
-import Countdown from "@/components/Countdown/Countdown";
+import Countdown from "@/components/ui/Countdown/Countdown";
 import { Holiday } from "@/lib/season";
 import styles from "./Hero.module.css";
 

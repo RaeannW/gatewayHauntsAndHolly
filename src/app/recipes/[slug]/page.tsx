@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import RecipeTemplate from "@/components/RecipeTemplate/RecipeTemplate";
+import RecipeTemplate from "@/components/recipe/RecipeTemplate/RecipeTemplate";
 import { getPostBySlug, samplePosts } from "@/lib/sample-data";
 
 interface RecipePageProps {

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Button from "@/components/Button/Button";
+import Button from "@/components/ui/Button/Button";
 import { Post, getPostHref } from "@/lib/sample-data";
 import styles from "./FeaturedBlogCard.module.css";
 

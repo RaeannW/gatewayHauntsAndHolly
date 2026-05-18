@@ -1,12 +1,12 @@
 import { ContentBlock } from "@/lib/sample-data";
-import ParagraphBlock from "@/components/blocks/ParagraphBlock";
-import HeadingBlock from "@/components/blocks/HeadingBlock";
-import ImageBlock from "@/components/blocks/ImageBlock";
-import ParagraphWithImageBlock from "@/components/blocks/ParagraphWithImageBlock";
-import ListBlock from "@/components/blocks/ListBlock";
-import CalloutBlock from "@/components/blocks/CalloutBlock";
-import ShopCardsBlock from "@/components/blocks/ShopCardsBlock";
-import Notes from "@/components/Notes/Notes";
+import ParagraphBlock from "@/components/post/blocks/ParagraphBlock";
+import HeadingBlock from "@/components/post/blocks/HeadingBlock";
+import ImageBlock from "@/components/post/blocks/ImageBlock";
+import ParagraphWithImageBlock from "@/components/post/blocks/ParagraphWithImageBlock";
+import ListBlock from "@/components/post/blocks/ListBlock";
+import CalloutBlock from "@/components/post/blocks/CalloutBlock";
+import ShopCardsBlock from "@/components/post/blocks/ShopCardsBlock";
+import Notes from "@/components/post/Notes/Notes";
 import styles from "./PostBody.module.css";
 
 interface PostBodyProps {

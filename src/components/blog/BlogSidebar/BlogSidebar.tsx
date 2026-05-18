@@ -1,8 +1,8 @@
 import Image from "next/image";
 import CategoriesList, {
   Category,
-} from "@/components/CategoriesList/CategoriesList";
-import NewsletterSignup from "@/components/NewsletterSignup/NewsletterSignup";
+} from "@/components/blog/CategoriesList/CategoriesList";
+import NewsletterSignup from "@/components/ui/NewsletterSignup/NewsletterSignup";
 import styles from "./BlogSidebar.module.css";
 
 interface BlogSidebarProps {
