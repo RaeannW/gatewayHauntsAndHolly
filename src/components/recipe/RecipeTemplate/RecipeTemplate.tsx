@@ -5,17 +5,22 @@ import NotebookPage from "@/components/post/NotebookPage/NotebookPage";
 import Notes from "@/components/post/Notes/Notes";
 import ShopCard from "@/components/post/ShopCard/ShopCard";
 import { SITE_URL } from "@/lib/constants";
-import { Post, RECIPE_SUBCATEGORY_LABELS } from "@/lib/sample-data";
+import { Post, RecipeSubcategoryInOrder } from "@/sanity/lib/queries";
 import Breadcrumb from "@/components/ui/Breadcrumb/Breadcrumb";
 import styles from "./RecipeTemplate.module.css";
 
 interface RecipeTemplateProps {
   recipe: Post;
+  subcategories: RecipeSubcategoryInOrder[];
 }
 
-export default function RecipeTemplate({ recipe }: RecipeTemplateProps) {
+export default function RecipeTemplate({
+  recipe,
+  subcategories,
+}: RecipeTemplateProps) {
   const subcategoryLabel = recipe.recipeSubcategory
-    ? RECIPE_SUBCATEGORY_LABELS[recipe.recipeSubcategory]
+    ? (subcategories.find((s) => s.slug === recipe.recipeSubcategory)
+        ?.pluralTitle ?? "Recipe")
     : "Recipe";
 
   const holidayLabel =
@@ -60,9 +65,7 @@ export default function RecipeTemplate({ recipe }: RecipeTemplateProps) {
       ? `${recipe.servings} ${recipe.servingUnit ?? "servings"}`
       : undefined,
     recipeCategory: subcategoryLabel,
-    recipeIngredient: recipe.ingredients?.map((item) =>
-      typeof item === "string" ? item : item.text,
-    ),
+    recipeIngredient: recipe.ingredients?.map((item) => item.text),
     recipeInstructions: recipe.instructions?.map((step, i) => ({
       "@type": "HowToStep",
       position: i + 1,
@@ -89,7 +92,7 @@ export default function RecipeTemplate({ recipe }: RecipeTemplateProps) {
 
           <div className={styles.heroImage}>
             <Image
-              src={recipe.image.src}
+              src={recipe.image.src || "/images/placeholder-1.jpg"}
               alt={recipe.image.alt}
               fill
               sizes="(max-width: 768px) 100vw, 800px"
@@ -136,27 +139,22 @@ export default function RecipeTemplate({ recipe }: RecipeTemplateProps) {
             <div className={styles.ingredients}>
               <h2 className={styles.sectionHeading}>Ingredients</h2>
               <ul className={styles.ingredientsList}>
-                {recipe.ingredients?.map((item, i) => {
-                  if (typeof item === "string") {
-                    return <li key={i}>{item}</li>;
-                  }
-                  return (
-                    <li key={i}>
-                      {item.affiliateUrl ? (
-                        <a
-                          href={item.affiliateUrl}
-                          target="_blank"
-                          rel="noopener sponsored"
-                          className={styles.ingredientLink}
-                        >
-                          {item.text}
-                        </a>
-                      ) : (
-                        item.text
-                      )}
-                    </li>
-                  );
-                })}
+                {recipe.ingredients?.map((item, i) => (
+                  <li key={i}>
+                    {item.affiliateUrl ? (
+                      <a
+                        href={item.affiliateUrl}
+                        target="_blank"
+                        rel="noopener sponsored"
+                        className={styles.ingredientLink}
+                      >
+                        {item.text}
+                      </a>
+                    ) : (
+                      item.text
+                    )}
+                  </li>
+                ))}
               </ul>
             </div>
 

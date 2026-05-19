@@ -27,8 +27,8 @@ export default function ShopCard({
       />
       <div className={styles.image}>
         <Image
-          src={image.src}
-          alt={image.alt}
+          src={image.src || "/images/placeholder-1.jpg"}
+          alt={image.alt || ""}
           fill
           sizes="200px"
           style={{ objectFit: "cover" }}

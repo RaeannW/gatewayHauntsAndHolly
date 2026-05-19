@@ -1,4 +1,4 @@
-import { Post } from "@/lib/sample-data";
+import { Post } from "@/sanity/lib/queries";
 import BlogPostCard from "@/components/blog/BlogPostCard/BlogPostCard";
 import styles from "./BlogFeed.module.css";
 

@@ -1,5 +1,5 @@
 import ShopCard from "@/components/post/ShopCard/ShopCard";
-import { RecipeTool } from "@/lib/sample-data";
+import { RecipeTool } from "@/sanity/lib/queries";
 import styles from "./ShopCardsBlock.module.css";
 
 interface ShopCardsBlockProps {

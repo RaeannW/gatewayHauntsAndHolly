@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Post, getPostHref } from "@/lib/sample-data";
+import { Post, getPostHref } from "@/sanity/lib/queries";
 import styles from "./BlogPostCard.module.css";
 
 interface BlogPostCardProps {
@@ -38,8 +38,8 @@ export default function BlogPostCard({ post }: BlogPostCardProps) {
           <span className={styles.tag}>{tagLabel}</span>
           <div className={styles.image}>
             <Image
-              src={post.image.src}
-              alt={post.image.alt}
+              src={post.image.src || "/images/placeholder-1.jpg"}
+              alt={post.image.alt || ""}
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               style={{ objectFit: "cover" }}

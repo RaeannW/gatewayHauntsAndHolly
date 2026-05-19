@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Topic } from "@/lib/sample-data";
+import { Topic } from "@/sanity/lib/queries";
 import styles from "./CategoriesList.module.css";
 
 export interface Category {

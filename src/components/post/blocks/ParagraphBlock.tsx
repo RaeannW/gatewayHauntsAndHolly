@@ -1,7 +1,7 @@
 import styles from "./ParagraphBlock.module.css";
 
 interface ParagraphBlockProps {
-  text: string;
+  text: React.ReactNode;
 }
 
 export default function ParagraphBlock({ text }: ParagraphBlockProps) {

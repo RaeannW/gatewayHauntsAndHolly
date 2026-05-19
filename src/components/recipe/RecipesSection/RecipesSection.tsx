@@ -1,4 +1,8 @@
-import { Post, RecipeSubcategory } from "@/lib/sample-data";
+import {
+  Post,
+  RecipeSubcategory,
+  RecipeSubcategoryInOrder,
+} from "@/sanity/lib/queries";
 import BlogPostCard from "@/components/blog/BlogPostCard/BlogPostCard";
 import RecipeTabs from "@/components/recipe/RecipeTabs/RecipeTabs";
 import RecipesHero from "@/components/recipe/RecipesHero/RecipesHero";
@@ -12,6 +16,7 @@ interface RecipesSectionProps {
   sectionTitle: string;
   recipes: Post[];
   counts: Record<RecipeSubcategory, number>;
+  subcategories: RecipeSubcategoryInOrder[];
   tabBasePath: string;
   garlandImage?: string;
   garlandHeight?: number;
@@ -25,6 +30,7 @@ export default function RecipesSection({
   sectionTitle,
   recipes,
   counts,
+  subcategories,
   tabBasePath,
   garlandImage,
   garlandHeight,
@@ -40,7 +46,11 @@ export default function RecipesSection({
         garlandHeight={garlandHeight}
       />
 
-      <RecipeTabs basePath={tabBasePath} counts={counts} />
+      <RecipeTabs
+        basePath={tabBasePath}
+        counts={counts}
+        subcategories={subcategories}
+      />
 
       <section className={styles.section}>
         <h2 className={styles.title}>{sectionTitle}</h2>

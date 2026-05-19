@@ -4,7 +4,8 @@ import PinterestButton from "@/components/ui/PinterestButton/PinterestButton";
 import NotebookPage from "@/components/post/NotebookPage/NotebookPage";
 import PostBody from "@/components/post/PostBody/PostBody";
 import { SITE_URL } from "@/lib/constants";
-import { Post, POST_TYPE_LABELS } from "@/lib/sample-data";
+import { Post } from "@/sanity/lib/queries";
+import { POST_TYPE_LABELS } from "@/lib/constants";
 import Breadcrumb from "@/components/ui/Breadcrumb/Breadcrumb";
 import styles from "./PostTemplate.module.css";
 
@@ -24,7 +25,9 @@ export default function PostTemplate({ post }: PostTemplateProps) {
 
   const breadcrumbItems = [
     { label: "Home", href: "/" },
-    ...(holidayLabel ? [{ label: holidayLabel, href: `/${post.holiday}` }] : []),
+    ...(holidayLabel
+      ? [{ label: holidayLabel, href: `/${post.holiday}` }]
+      : []),
     { label: post.title },
   ];
 
@@ -37,7 +40,9 @@ export default function PostTemplate({ post }: PostTemplateProps) {
   const metaItems = [
     { label: "By", value: post.author },
     { label: "Published", value: formattedDate },
-    ...(post.readTime ? [{ label: "Read Time", value: `${post.readTime} min` }] : []),
+    ...(post.readTime
+      ? [{ label: "Read Time", value: `${post.readTime} min` }]
+      : []),
   ];
 
   return (
@@ -54,8 +59,8 @@ export default function PostTemplate({ post }: PostTemplateProps) {
 
           <div className={styles.heroImage}>
             <Image
-              src={post.image.src}
-              alt={post.image.alt}
+              src={post.image.src || "/images/placeholder-1.jpg"}
+              alt={post.image.alt || ""}
               fill
               sizes="(max-width: 768px) 100vw, 800px"
               style={{ objectFit: "cover" }}

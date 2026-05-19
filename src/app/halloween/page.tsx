@@ -10,26 +10,41 @@ import {
   getPostsByHoliday,
   getLatestRecipes,
   getRecipeSubcategoryCounts,
-  TOPICS_IN_ORDER,
-} from "@/lib/sample-data";
+  getTopicsInOrder,
+  getRecipeSubcategoriesInOrder,
+} from "@/sanity/lib/queries";
 import styles from "./page.module.css";
 
-export default function HalloweenPage() {
-  const featured = getFeaturedPosts("halloween")[0];
-  const allPosts = getPostsByHoliday("halloween");
+export default async function HalloweenPage() {
+  const [
+    featuredList,
+    allPosts,
+    latestRecipes,
+    recipeCounts,
+    topics,
+    subcategories,
+  ] = await Promise.all([
+    getFeaturedPosts("halloween"),
+    getPostsByHoliday("halloween"),
+    getLatestRecipes("halloween", 3),
+    getRecipeSubcategoryCounts("halloween"),
+    getTopicsInOrder(),
+    getRecipeSubcategoriesInOrder(),
+  ]);
+
+  const featured = featuredList[0];
   const blogPosts = allPosts.filter((post) => post.postType !== "recipe");
 
   const categories: Category[] = [
     { topic: "all", label: "All Posts", count: blogPosts.length },
-    ...TOPICS_IN_ORDER.map((topic) => ({
-      topic,
-      label: topic.charAt(0).toUpperCase() + topic.slice(1),
-      count: blogPosts.filter((p) => p.topic === topic).length,
-    })).filter((cat) => cat.count > 0),
+    ...topics
+      .map((topic) => ({
+        topic: topic.slug,
+        label: topic.title,
+        count: blogPosts.filter((p) => p.topic === topic.slug).length,
+      }))
+      .filter((cat) => cat.count > 0),
   ];
-
-  const latestRecipes = getLatestRecipes("halloween", 3);
-  const recipeCounts = getRecipeSubcategoryCounts("halloween");
 
   return (
     <>
@@ -87,6 +102,7 @@ export default function HalloweenPage() {
         sectionTitle="Latest Halloween Recipes"
         recipes={latestRecipes}
         counts={recipeCounts}
+        subcategories={subcategories}
         tabBasePath="/halloween/recipes"
         garlandImage="/images/decor/laceTileCream.svg"
         garlandHeight={60}

@@ -1,20 +1,19 @@
 import { notFound } from "next/navigation";
 import PostTemplate from "@/components/post/PostTemplate/PostTemplate";
-import { getPostBySlug, samplePosts } from "@/lib/sample-data";
+import { getPostBySlug, getAllNonRecipeSlugs } from "@/sanity/lib/queries";
 
 interface PostPageProps {
   params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
-  return samplePosts
-    .filter((post) => post.postType !== "recipe")
-    .map((post) => ({ slug: post.slug }));
+  const slugs = await getAllNonRecipeSlugs();
+  return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: PostPageProps) {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const post = await getPostBySlug(slug);
 
   if (!post || post.postType === "recipe") {
     return { title: "Post Not Found" };
@@ -33,7 +32,7 @@ export async function generateMetadata({ params }: PostPageProps) {
 
 export default async function PostPage({ params }: PostPageProps) {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const post = await getPostBySlug(slug);
 
   if (!post || post.postType === "recipe") {
     notFound();

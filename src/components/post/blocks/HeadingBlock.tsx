@@ -2,7 +2,7 @@ import styles from "./HeadingBlock.module.css";
 
 interface HeadingBlockProps {
   level: 2 | 3;
-  text: string;
+  text: React.ReactNode;
 }
 
 export default function HeadingBlock({ level, text }: HeadingBlockProps) {

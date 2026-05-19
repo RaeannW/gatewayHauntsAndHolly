@@ -1,9 +1,10 @@
-export default function Home() {
+import { getFeaturedPosts } from "@/sanity/lib/queries";
+
+export default async function HomePage() {
+  const featured = await getFeaturedPosts();
   return (
     <div>
-      <main>
-        <h1>HomePage</h1>
-      </main>
+      <main>Homepage</main>
     </div>
   );
 }

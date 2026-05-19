@@ -2,33 +2,37 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-  RECIPE_SUBCATEGORIES_IN_ORDER,
-  RECIPE_SUBCATEGORY_LABELS,
+import type {
   RecipeSubcategory,
-} from "@/lib/sample-data";
+  RecipeSubcategoryInOrder,
+} from "@/sanity/lib/queries";
 import styles from "./RecipeTabs.module.css";
 
 interface RecipeTabsProps {
   basePath: string;
   counts: Record<RecipeSubcategory, number>;
+  subcategories: RecipeSubcategoryInOrder[];
 }
 
-export default function RecipeTabs({ basePath, counts }: RecipeTabsProps) {
+export default function RecipeTabs({
+  basePath,
+  counts,
+  subcategories,
+}: RecipeTabsProps) {
   const pathname = usePathname();
 
   return (
     <nav className={styles.tabs} aria-label="Recipe categories">
-      {RECIPE_SUBCATEGORIES_IN_ORDER.map((sub) => {
-        const href = `${basePath}/${sub}`;
+      {subcategories.map((sub) => {
+        const href = `${basePath}/${sub.slug}`;
         const isActive = pathname === href;
         return (
           <Link
-            key={sub}
+            key={sub.slug}
             href={href}
             className={`${styles.tab} ${isActive ? styles.active : ""}`}
           >
-            {RECIPE_SUBCATEGORY_LABELS[sub]} ({counts[sub]})
+            {sub.pluralTitle} ({counts[sub.slug]})
           </Link>
         );
       })}
