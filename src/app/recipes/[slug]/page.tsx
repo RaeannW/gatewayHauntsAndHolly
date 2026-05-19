@@ -1,20 +1,23 @@
 import { notFound } from "next/navigation";
 import RecipeTemplate from "@/components/recipe/RecipeTemplate/RecipeTemplate";
-import { getPostBySlug, samplePosts } from "@/lib/sample-data";
+import {
+  getPostBySlug,
+  getAllRecipeSlugs,
+  getRecipeSubcategoriesInOrder,
+} from "@/sanity/lib/queries";
 
 interface RecipePageProps {
   params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
-  return samplePosts
-    .filter((post) => post.postType === "recipe")
-    .map((post) => ({ slug: post.slug }));
+  const slugs = await getAllRecipeSlugs();
+  return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: RecipePageProps) {
   const { slug } = await params;
-  const recipe = getPostBySlug(slug);
+  const recipe = await getPostBySlug(slug);
 
   if (!recipe || recipe.postType !== "recipe") {
     return { title: "Recipe Not Found" };
@@ -33,11 +36,15 @@ export async function generateMetadata({ params }: RecipePageProps) {
 
 export default async function RecipePage({ params }: RecipePageProps) {
   const { slug } = await params;
-  const recipe = getPostBySlug(slug);
+
+  const [recipe, subcategories] = await Promise.all([
+    getPostBySlug(slug),
+    getRecipeSubcategoriesInOrder(),
+  ]);
 
   if (!recipe || recipe.postType !== "recipe") {
     notFound();
   }
 
-  return <RecipeTemplate recipe={recipe} />;
+  return <RecipeTemplate recipe={recipe} subcategories={subcategories} />;
 }

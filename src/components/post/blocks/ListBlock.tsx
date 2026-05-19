@@ -1,25 +1,13 @@
 import styles from "./ListBlock.module.css";
 
 interface ListBlockProps {
-  items: string[];
   ordered: boolean;
+  children: React.ReactNode;
 }
 
-export default function ListBlock({ items, ordered }: ListBlockProps) {
+export default function ListBlock({ ordered, children }: ListBlockProps) {
   if (ordered) {
-    return (
-      <ol className={styles.orderedList}>
-        {items.map((item, i) => (
-          <li key={i}>{item}</li>
-        ))}
-      </ol>
-    );
+    return <ol className={styles.orderedList}>{children}</ol>;
   }
-  return (
-    <ul className={styles.unorderedList}>
-      {items.map((item, i) => (
-        <li key={i}>{item}</li>
-      ))}
-    </ul>
-  );
+  return <ul className={styles.unorderedList}>{children}</ul>;
 }

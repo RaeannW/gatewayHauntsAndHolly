@@ -1,4 +1,4 @@
-import { Post } from "@/lib/sample-data";
+import { Post } from "@/sanity/lib/queries";
 import BlogSidebar from "@/components/blog/BlogSidebar/BlogSidebar";
 import BlogFeed from "@/components/blog/BlogFeed/BlogFeed";
 import Garland from "@/components/ui/Garland/Garland";

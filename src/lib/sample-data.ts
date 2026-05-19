@@ -584,24 +584,6 @@ export const samplePosts: Post[] = [
     audience: ["family"],
     readTime: 5,
   },
-  {
-    slug: "haunted-house-chili",
-    title: "Cauldron Chili for a Crowd",
-    excerpt:
-      "A pot of chili built for trick-or-treat night. Make it in the morning, simmer all day, ladle it after the candy run.",
-    image: {
-      src: "/images/placeholder-1.jpg",
-      alt: "Bowl of hearty chili on a wooden table",
-    },
-    author: "Marcus Bell",
-    publishedAt: "2025-10-05",
-    holiday: "halloween",
-    topic: "recipes",
-    postType: "recipe",
-    recipeSubcategory: "meal",
-    audience: ["family"],
-    readTime: 6,
-  },
 ];
 
 // Helper functions

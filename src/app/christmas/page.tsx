@@ -11,7 +11,7 @@ import {
   getLatestRecipes,
   getRecipeSubcategoryCounts,
   TOPICS_IN_ORDER,
-} from "@/lib/sample-data";
+} from "@/sanity/lib/queries";
 import styles from "./page.module.css";
 
 export default function ChristmasPage() {

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Button from "@/components/ui/Button/Button";
-import { Post, getPostHref } from "@/lib/sample-data";
+import { Post, getPostHref } from "@/sanity/lib/queries";
 import styles from "./FeaturedBlogCard.module.css";
 
 interface FeaturedBlogCardProps {
@@ -25,8 +25,8 @@ export default function FeaturedBlogCard({
       <div className={styles.inner}>
         <div className={styles.imageWrap}>
           <Image
-            src={post.image.src}
-            alt={post.image.alt}
+            src={post.image.src || "/images/placeholder-1.jpg"}
+            alt={post.image.alt || ""}
             fill
             sizes="(max-width: 768px) 100vw, 400px"
             className={styles.image}
