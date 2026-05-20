@@ -1,0 +1,37 @@
+.home {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--space-8) var(--space-16);
+}
+
+.topSpace {
+  height: var(--space-12);
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-8) 0;
+  color: var(--color-black);
+}
+
+.diamond {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-black);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+.line {
+  flex: 1;
+  height: 1.5px;
+  background-color: var(--color-black);
+}
+
+.flourish {
+  width: 155px;
+  height: auto;
+  flex-shrink: 0;
+}

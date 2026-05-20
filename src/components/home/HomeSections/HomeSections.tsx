@@ -1,0 +1,65 @@
+import Link from "next/link";
+import Image from "next/image";
+import styles from "./HomeSections.module.css";
+
+interface HomeSection {
+  href: string;
+  iconSrc: string;
+  iconAlt: string;
+  kicker: string;
+  title: string;
+  description: string;
+}
+
+const SECTIONS: HomeSection[] = [
+  {
+    href: "/halloween",
+    iconSrc: "/images/home/halloween-icon.png",
+    iconAlt: "Halloween",
+    kicker: "The Spooky Season",
+    title: "Halloween",
+    description:
+      "Pop-up bars, pumpkin patches, costume parties, and the haunted history of the city. Everything for a spooky season worth remembering.",
+  },
+  {
+    href: "/christmas",
+    iconSrc: "/images/home/christmas-icon.png",
+    iconAlt: "Christmas",
+    kicker: "The Merry Season",
+    title: "Christmas",
+    description:
+      "Light displays, holiday markets, cookie swaps, and family traditions. Your guide to making merry across the metro.",
+  },
+  {
+    href: "/stl",
+    iconSrc: "/images/home/stl-icon.png",
+    iconAlt: "St. Louis",
+    kicker: "The Gateway City",
+    title: "St. Louis",
+    description:
+      "Local events, neighborhood guides, and the seasonal happenings that make the metro feel like home all year round.",
+  },
+];
+
+export default function HomeSections() {
+  return (
+    <section className={styles.sections} aria-label="Explore by category">
+      {SECTIONS.map((section) => (
+        <Link key={section.href} href={section.href} className={styles.section}>
+          <div className={styles.iconWrap}>
+            <Image
+              src={section.iconSrc}
+              alt={section.iconAlt}
+              width={80}
+              height={80}
+              className={styles.icon}
+            />
+          </div>
+          <span className={styles.kicker}>{section.kicker}</span>
+          <h2 className={styles.title}>{section.title}</h2>
+          <p className={styles.description}>{section.description}</p>
+        </Link>
+      ))}
+    </section>
+  );
+}
