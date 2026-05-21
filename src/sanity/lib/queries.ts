@@ -53,6 +53,20 @@ export interface RecipeSubcategoryInOrder {
   order: number;
 }
 
+export interface HomepageCarouselSlide {
+  slug: string;
+  title: string;
+  excerpt: string;
+  postType: PostType;
+  holiday: Holiday;
+  image: { src: string; alt: string };
+  // CarouselSlide-compatible fields (HeroCarousel renders these directly)
+  href: string;
+  imageSrc: string;
+  imageAlt: string;
+  category: string;
+}
+
 export interface Post {
   _id: string;
   slug: string;
@@ -269,6 +283,40 @@ export async function getRecipeSubcategoryCounts(
   }
 
   return counts;
+}
+
+function toHolidayLabel(holiday: Holiday): string {
+  if (holiday === "halloween") return "Halloween";
+  if (holiday === "christmas") return "Christmas";
+  return "Featured";
+}
+
+type RawCarouselSlide = Omit<
+  HomepageCarouselSlide,
+  "href" | "imageSrc" | "imageAlt" | "category"
+>;
+
+export async function getHomepageCarousel(): Promise<HomepageCarouselSlide[]> {
+  const result = await client.fetch<{ slides: RawCarouselSlide[] | null } | null>(
+    `*[_type == "homepageCarousel"][0]{
+      "slides": slides[]->{
+        "slug": slug.current,
+        title,
+        excerpt,
+        postType,
+        holiday,
+        "image": { "src": image.asset->url, "alt": alt }
+      }
+    }`,
+  );
+
+  return (result?.slides ?? []).filter((slide) => Boolean(slide.image?.src)).map((slide) => ({
+    ...slide,
+    href: getPostHref(slide),
+    imageSrc: slide.image.src,
+    imageAlt: slide.image.alt,
+    category: `${toHolidayLabel(slide.holiday)} · ${slide.postType.charAt(0).toUpperCase()}${slide.postType.slice(1)}`,
+  }));
 }
 
 // getPostHref is pure logic, no data fetch — stays sync
