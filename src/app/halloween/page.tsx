@@ -12,6 +12,7 @@ import {
   getRecipeSubcategoryCounts,
   getTopicsInOrder,
   getRecipeSubcategoriesInOrder,
+  getPostHref,
 } from "@/sanity/lib/queries";
 import styles from "./page.module.css";
 
@@ -34,6 +35,18 @@ export default async function HalloweenPage() {
 
   const featured = featuredList[0];
   const blogPosts = allPosts.filter((post) => post.postType !== "recipe");
+
+  const slides = featuredList
+    .filter((p) => Boolean(p.image?.src))
+    .slice(0, 6)
+    .map((p) => ({
+      href: getPostHref(p),
+      imageSrc: p.image.src,
+      imageAlt: p.image.alt,
+      category: `Halloween · ${p.postType.charAt(0).toUpperCase()}${p.postType.slice(1)}`,
+      title: p.title,
+      excerpt: p.excerpt,
+    }));
 
   const categories: Category[] = [
     { topic: "all", label: "All Posts", count: blogPosts.length },
@@ -64,15 +77,7 @@ export default async function HalloweenPage() {
         }}
         countdownTarget="halloween"
         countdownVariant="compact"
-        slides={[
-          {
-            href: "/halloween/recipes/witches-fingers",
-            imageSrc: "/images/placeholder-1.jpg",
-            imageAlt: "Witches finger cookies",
-            category: "Recipe",
-            title: "Witches' finger cookies for your next gathering",
-          },
-        ]}
+        slides={slides}
       />
 
       <section className={styles.halloweenFeaturedSection}>
