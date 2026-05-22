@@ -83,13 +83,13 @@ body {
   --container-padding: 2rem;
 
   /* Default theme tokens — Halloween */
-  --color-accent: var(--h-color-orange);
+  --color-accent: var(--color-brown);
   --color-row-dark: var(--color-black);
-  --color-row-accent: var(--h-color-orange);
-  --color-button-bg: var(--h-color-orange);
+  --color-row-accent: var(--color-brown);
+  --color-button-bg: var(--color-brown);
   --color-button-hover-bg: var(--color-brown);
-  --color-tag-bg: var(--h-color-orange);
-  --color-hero-bg: var(--h-color-dark-orange);
+  --color-tag-bg: var(--color-brown);
+  --color-hero-bg: var(--color-black);
 }
 
 body {
