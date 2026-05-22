@@ -1,10 +1,14 @@
 import HomeSections from "@/components//home/HomeSections/HomeSections";
 import HeroCarousel from "@/components/ui/Hero/HeroCarousel";
-import { getHomepageCarousel } from "@/sanity/lib/queries";
+import HomeLatest from "@/components/home/HomeLatest/HomeLatest";
+import { getHomepageCarousel, getLatestPosts } from "@/sanity/lib/queries";
 import styles from "./page.module.css";
 
 export default async function HomePage() {
-  const carouselSlides = await getHomepageCarousel();
+  const [carouselSlides, latestPosts] = await Promise.all([
+    getHomepageCarousel(),
+    getLatestPosts(6),
+  ]);
 
   return (
     <>
@@ -13,20 +17,24 @@ export default async function HomePage() {
 
         <HomeSections />
 
-        <div className={styles.divider} aria-hidden="true">
-          <span className={styles.diamond} />
-          <span className={styles.line} />
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/nav/flourish.svg"
-            alt=""
-            className={styles.flourish}
-          />
-          <span className={styles.line} />
-          <span className={styles.diamond} />
-        </div>
+        <div className={styles.divider} aria-hidden="true"></div>
 
         <HeroCarousel slides={carouselSlides} />
+
+        <div className={styles.divider} aria-hidden="true">
+          <span className={styles.diamondBottom} />
+          <span className={styles.lineBottom} />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/decor/flourishTwo.svg"
+            alt=""
+            className={styles.flourishBottom}
+          />
+          <span className={styles.lineBottom} />
+          <span className={styles.diamondBottom} />
+        </div>
+
+        <HomeLatest posts={latestPosts} />
       </div>
     </>
   );

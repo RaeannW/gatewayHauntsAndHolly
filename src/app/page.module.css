@@ -16,22 +16,25 @@
   color: var(--color-black);
 }
 
-.diamond {
+.flourishBottom {
+  width: 155px;
+  height: auto;
+  flex-shrink: 0;
+  transform: rotate(180deg);
+}
+
+.diamondBottom {
   width: 8px;
   height: 8px;
   background-color: var(--color-black);
   transform: rotate(45deg);
   flex-shrink: 0;
+  margin-top: -20px;
 }
 
-.line {
+.lineBottom {
   flex: 1;
   height: 1.5px;
   background-color: var(--color-black);
-}
-
-.flourish {
-  width: 155px;
-  height: auto;
-  flex-shrink: 0;
+  margin-top: -20px;
 }

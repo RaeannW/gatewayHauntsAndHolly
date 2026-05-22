@@ -249,6 +249,13 @@ export async function getUpcomingEvents(holiday?: Holiday): Promise<Post[]> {
   return client.fetch<Post[]>(query, holiday ? { now, holiday } : { now });
 }
 
+export async function getLatestPosts(limit: number = 6): Promise<Post[]> {
+  return client.fetch<Post[]>(
+    `*[_type == "post" && postType != "recipe"] | order(publishedAt desc) [0...$limit] { ${postProjection} }`,
+    { limit },
+  );
+}
+
 export async function getLatestRecipes(
   holiday: Holiday,
   limit: number = 3,
