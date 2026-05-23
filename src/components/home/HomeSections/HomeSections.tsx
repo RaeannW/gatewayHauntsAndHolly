@@ -14,8 +14,8 @@ interface HomeSection {
 const SECTIONS: HomeSection[] = [
   {
     href: "/halloween",
-    iconSrc: "/images/home/halloween-icon.png",
-    iconAlt: "Halloween",
+    iconSrc: "/images/decor/witchBroom.png",
+    iconAlt: "Flying Witch",
     kicker: "The Spooky Season",
     title: "Halloween",
     description:
@@ -23,8 +23,8 @@ const SECTIONS: HomeSection[] = [
   },
   {
     href: "/christmas",
-    iconSrc: "/images/home/christmas-icon.png",
-    iconAlt: "Christmas",
+    iconSrc: "/images/decor/wreath.png",
+    iconAlt: "Christmas Wreath",
     kicker: "The Merry Season",
     title: "Christmas",
     description:
@@ -32,8 +32,8 @@ const SECTIONS: HomeSection[] = [
   },
   {
     href: "/stl",
-    iconSrc: "/images/home/stl-icon.png",
-    iconAlt: "St. Louis",
+    iconSrc: "/images/decor/arch.png",
+    iconAlt: "St. Louis Arch",
     kicker: "The Gateway City",
     title: "St. Louis",
     description:
@@ -56,7 +56,9 @@ export default function HomeSections() {
             />
           </div>
           <span className={styles.kicker}>{section.kicker}</span>
-          <h2 className={styles.title}>{section.title}</h2>
+          <div className={styles.ribbon}>
+            <h2 className={styles.title}>{section.title}</h2>
+          </div>
           <p className={styles.description}>{section.description}</p>
         </Link>
       ))}

@@ -17,7 +17,7 @@
 }
 
 .flourishBottom {
-  width: 155px;
+  width: 200px;
   height: auto;
   flex-shrink: 0;
   transform: rotate(180deg);
@@ -34,7 +34,7 @@
 
 .lineBottom {
   flex: 1;
-  height: 1.5px;
+  height: 2px;
   background-color: var(--color-black);
   margin-top: -20px;
 }
