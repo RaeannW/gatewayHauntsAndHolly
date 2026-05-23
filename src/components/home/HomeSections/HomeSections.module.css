@@ -52,20 +52,6 @@
   margin-bottom: var(--space-2);
 }
 
-.ribbon {
-  background: var(--color-tan-slightFade);
-  padding: 0.5rem 3rem; /* extra side padding so text clears the notches */
-  display: inline-block;
-  margin: 0.5rem;
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    calc(100% - 20px) 50%,
-    100% 100%,
-    0 100%,
-    20px 50%
-  );
-}
 
 .title {
   font-family: var(--font-serif), Georgia, serif;

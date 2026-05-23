@@ -69,3 +69,14 @@
 .ghost:hover:not(:disabled) {
   color: var(--color-accent);
 }
+
+.outlined {
+  background-color: transparent;
+  color: var(--color-black);
+  border-color: var(--color-black);
+}
+
+.outlined:hover:not(:disabled) {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}

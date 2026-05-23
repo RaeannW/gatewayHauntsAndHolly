@@ -122,6 +122,21 @@ h6 {
   font-family: var(--font-serif), Georgia, serif;
 }
 
+.ribbon {
+  background: var(--color-tan-slightFade);
+  padding: 0.5rem 3rem;
+  display: inline-block;
+  margin: 0.5rem;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    calc(100% - 20px) 50%,
+    100% 100%,
+    0 100%,
+    20px 50%
+  );
+}
+
 body.theme-halloween {
   --color-accent: var(--h-color-orange);
   --color-row-dark: var(--color-black);

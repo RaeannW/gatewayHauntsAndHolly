@@ -4,7 +4,11 @@ import { useState } from "react";
 import Button from "@/components/ui/Button/Button";
 import styles from "./NewsletterSignup.module.css";
 
-export default function NewsletterSignup() {
+interface NewsletterSignupProps {
+  variant?: "light" | "dark";
+}
+
+export default function NewsletterSignup({ variant = "light" }: NewsletterSignupProps) {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
@@ -17,7 +21,7 @@ export default function NewsletterSignup() {
   };
 
   return (
-    <div className={styles.signup}>
+    <div className={`${styles.signup} ${variant === "dark" ? styles.dark : ""}`}>
       <h3 className={styles.title}>Get Updates</h3>
       <p className={styles.description}>
         New posts and seasonal picks straight to your inbox.
