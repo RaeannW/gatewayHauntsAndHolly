@@ -4,7 +4,7 @@
   max-width: var(--container-max);
   margin: 0 auto;
   border-top: 2px solid var(--color-black);
-  border-bottom: 1px solid var(--color-black);
+  border-bottom: 2px solid var(--color-black);
 }
 
 .section {
@@ -28,8 +28,8 @@
 }
 
 .iconWrap {
-  width: 80px;
-  height: 80px;
+  width: 110px;
+  height: 110px;
   margin-bottom: var(--space-4);
   display: flex;
   align-items: center;
@@ -52,13 +52,28 @@
   margin-bottom: var(--space-2);
 }
 
+.ribbon {
+  background: var(--color-tan-slightFade);
+  padding: 0.5rem 3rem; /* extra side padding so text clears the notches */
+  display: inline-block;
+  margin: 0.5rem;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    calc(100% - 20px) 50%,
+    100% 100%,
+    0 100%,
+    20px 50%
+  );
+}
+
 .title {
   font-family: var(--font-serif), Georgia, serif;
   font-weight: var(--weight-bold);
   font-size: var(--text-2xl);
   color: var(--color-black);
   line-height: var(--leading-tight);
-  margin: 0 0 var(--space-3);
+  margin: 10 0 var(--space-3);
 }
 
 .description {
