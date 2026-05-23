@@ -1,13 +1,14 @@
 import HomeSections from "@/components//home/HomeSections/HomeSections";
 import HeroCarousel from "@/components/ui/Hero/HeroCarousel";
 import HomeLatest from "@/components/home/HomeLatest/HomeLatest";
+import HomeConnect from "@/components/home/HomeConnect/HomeConnect";
 import { getHomepageCarousel, getLatestPosts } from "@/sanity/lib/queries";
 import styles from "./page.module.css";
 
 export default async function HomePage() {
   const [carouselSlides, latestPosts] = await Promise.all([
     getHomepageCarousel(),
-    getLatestPosts(6),
+    getLatestPosts(3),
   ]);
 
   return (
@@ -35,6 +36,8 @@ export default async function HomePage() {
         </div>
 
         <HomeLatest posts={latestPosts} />
+
+        <HomeConnect />
       </div>
     </>
   );

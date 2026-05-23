@@ -56,7 +56,7 @@ export default function HomeSections() {
             />
           </div>
           <span className={styles.kicker}>{section.kicker}</span>
-          <div className={styles.ribbon}>
+          <div className="ribbon">
             <h2 className={styles.title}>{section.title}</h2>
           </div>
           <p className={styles.description}>{section.description}</p>

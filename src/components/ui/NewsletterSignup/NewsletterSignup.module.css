@@ -60,6 +60,44 @@
   margin: 0;
 }
 
+/* Dark variant — used inside black center column */
+.dark {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.dark::before {
+  display: none;
+}
+
+.dark .title {
+  color: var(--color-cream);
+}
+
+.dark .description {
+  color: var(--color-cream);
+  opacity: 0.8;
+}
+
+.dark .input {
+  background: transparent;
+  color: var(--color-cream);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.dark .input::placeholder {
+  color: rgba(250, 246, 238, 0.45);
+}
+
+.dark .input:focus {
+  border-color: var(--color-accent);
+}
+
+.dark .success {
+  color: var(--color-accent);
+}
+
 .srOnly {
   position: absolute;
   width: 1px;
