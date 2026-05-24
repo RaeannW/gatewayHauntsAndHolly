@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   max-width: var(--container-max);
-  margin: 0 auto;
   border-top: 2px solid var(--color-black);
   border-bottom: 2px solid var(--color-black);
 }
@@ -51,7 +50,6 @@
   color: var(--color-brown);
   margin-bottom: var(--space-2);
 }
-
 
 .title {
   font-family: var(--font-serif), Georgia, serif;

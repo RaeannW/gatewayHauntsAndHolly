@@ -14,7 +14,14 @@ export default async function HomePage() {
   return (
     <>
       <div className={styles.home}>
-        <div className={styles.topSpace} />
+        <p className={styles.title}>Welcome</p>
+
+        <div className={styles.dividerLine} aria-hidden="true"></div>
+
+        <h1 className={styles.tagline}>
+          {" "}
+          ✶ Your Halloween & Christmas Guide ✶
+        </h1>
 
         <HomeSections />
 

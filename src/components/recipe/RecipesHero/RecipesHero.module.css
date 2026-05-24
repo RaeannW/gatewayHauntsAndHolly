@@ -27,14 +27,15 @@
 }
 
 .title {
-  font-family: var(--font-display-bold), Georgia, serif;
-  font-size: var(--text-8xl);
-  font-weight: var(--weight-regular);
+  font-family: var(--font-title);
+  font-weight: 400;
+  font-style: normal;
+  font-size: var(--text-9xl);
   color: var(--color-black);
-  margin: 0 0 var(--space-6);
+  margin: 15px 0 0 0;
   letter-spacing: var(--tracking-wide);
-  text-transform: uppercase;
   line-height: var(--leading-tight);
+  text-transform: lowercase;
 }
 
 .subtitle {
