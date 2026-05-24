@@ -5,14 +5,14 @@
 }
 
 .title {
-  font-family: var(--font-display-bold), Georgia, serif;
+  font-family: var(--font-title);
+  font-weight: 400;
+  font-style: normal;
   font-size: clamp(var(--text-5xl), 12vw, var(--text-9xl));
-  text-transform: uppercase;
-  letter-spacing: var(--tracking-wide);
   text-align: center;
-  margin: 0;
+  margin: 20px 0 0 0;
   line-height: var(--leading-tight, 1.1);
-  color: var(--h-color-black);
+  color: var(--color-black);
 }
 
 .subtitle {
@@ -26,7 +26,7 @@
 
 .subtitleBlock {
   background-color: var(--color-tan-faded);
-  margin: 1.5rem 0;
+  margin-bottom: 10px;
 }
 
 .subtitleBlock .subtitle {
@@ -75,6 +75,10 @@
 }
 
 @media (max-width: 1024px) {
+  .title {
+    margin-bottom: 20px;
+  }
+
   .bottom {
     grid-template-columns: 1fr 1fr;
     gap: var(--space-6);

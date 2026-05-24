@@ -29,6 +29,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${alegreya.variable} ${rozhaOne.variable}`}>
+      <head>
+        <link rel="stylesheet" href="https://use.typekit.net/jmm4bpu.css" />
+      </head>
       <body>
         <Nav />
         <main>{children}</main>
