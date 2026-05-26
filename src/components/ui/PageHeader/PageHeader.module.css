@@ -1,0 +1,29 @@
+.title {
+  font-family: var(--font-title);
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(var(--text-5xl), 12vw, var(--text-9xl));
+  text-align: center;
+  margin: 20px 0 0 0;
+  line-height: var(--leading-tight, 1.1);
+  color: var(--color-black);
+}
+
+.dividerLine {
+  width: auto;
+  height: 1.5px;
+  background-color: var(--color-black);
+}
+
+.tagline {
+  margin: 15px auto;
+  text-align: center;
+  white-space: nowrap;
+  font-size: clamp(var(--text-xl), 4vw, var(--text-3xl));
+}
+
+@media (max-width: 1024px) {
+  .title {
+    margin-bottom: 20px;
+  }
+}

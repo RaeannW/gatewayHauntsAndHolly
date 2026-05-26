@@ -2,6 +2,7 @@ import HomeSections from "@/components//home/HomeSections/HomeSections";
 import HeroCarousel from "@/components/ui/Hero/HeroCarousel";
 import HomeLatest from "@/components/home/HomeLatest/HomeLatest";
 import HomeConnect from "@/components/home/HomeConnect/HomeConnect";
+import PageHeader from "@/components/ui/PageHeader/PageHeader";
 import { getHomepageCarousel, getLatestPosts } from "@/sanity/lib/queries";
 import styles from "./page.module.css";
 
@@ -14,14 +15,7 @@ export default async function HomePage() {
   return (
     <>
       <div className={styles.home}>
-        <p className={styles.title}>Welcome</p>
-
-        <div className={styles.dividerLine} aria-hidden="true"></div>
-
-        <h1 className={styles.tagline}>
-          {" "}
-          ✶ Your Halloween & Christmas Guide ✶
-        </h1>
+        <PageHeader title="Welcome" tagline="Your Halloween & Christmas Guide" />
 
         <HomeSections />
 
