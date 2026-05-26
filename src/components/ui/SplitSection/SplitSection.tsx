@@ -24,7 +24,7 @@ export default function SplitSection({
     <div
       className={`${styles.grid} ${imageSide === "left" ? styles.imageLeft : ""}`}
     >
-      <div>
+      <div className={styles.textColumn}>
         <h2 className={styles.heading}>{sectionTitle}</h2>
         <div className={styles.body}>{children}</div>
       </div>
