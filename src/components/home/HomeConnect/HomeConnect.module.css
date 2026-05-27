@@ -64,7 +64,7 @@
 
 .blurb {
   font-family: var(--font-serif), Georgia, serif;
-  font-size: var(--text-sm);
+  font-size: --text-base;
   color: var(--color-black);
   line-height: var(--leading-normal);
   margin: 0;
@@ -116,7 +116,7 @@
 
 .centerBlurb {
   font-family: var(--font-serif), Georgia, serif;
-  font-size: var(--text-sm);
+  font-size: --text-base;
   color: var(--color-cream);
   opacity: 0.8;
   line-height: var(--leading-normal);

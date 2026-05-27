@@ -27,7 +27,7 @@
 
 .seeAll {
   font-family: var(--font-serif), Georgia, serif;
-  font-size: var(--text-sm);
+  font-size: --text-base;
   font-weight: var(--weight-bold);
   letter-spacing: var(--tracking-widest);
   text-transform: uppercase;

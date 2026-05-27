@@ -7,7 +7,7 @@
 
 .label {
   font-family: var(--font-serif), Georgia, serif;
-  font-size: var(--text-sm);
+  font-size: --text-base;
   text-transform: uppercase;
 }
 
@@ -59,7 +59,7 @@
 }
 
 .feature .unitLabel {
-  font-size: var(--text-sm);
+  font-size: --text-base;
 }
 
 @media (max-width: 768px) {

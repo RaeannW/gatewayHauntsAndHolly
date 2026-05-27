@@ -16,7 +16,7 @@
 .category {
   display: block;
   font-family: var(--font-serif), Georgia, serif;
-  font-size: var(--text-sm);
+  font-size: --text-base;
   font-weight: var(--weight-bold);
   text-transform: uppercase;
   letter-spacing: var(--tracking-widest);

@@ -24,7 +24,7 @@
   text-decoration: none;
   text-align: center;
   font-family: var(--font-serif), system-ui, sans-serif;
-  font-size: var(--text-sm);
+  font-size: --text-base;
   letter-spacing: var(--tracking-wide);
   border-radius: 12px 12px 0 0;
   transition:
