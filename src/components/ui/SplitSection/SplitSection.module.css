@@ -4,12 +4,12 @@
   gap: 0;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem var(--container-padding, 2rem);
+  padding: 1rem 0 2.5rem 0;
 }
 
 .textColumn {
   padding-right: 2.5rem;
-  border-right: 1px solid var(--color-black);
+  /* border-right: 1px solid var(--color-black); */
 }
 
 .imageColumn {
@@ -22,6 +22,15 @@
   font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl));
   color: var(--color-black);
   margin: 0 0 var(--space-6);
+  line-height: var(--leading-tight);
+}
+
+.body :global(h3) {
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: var(--weight-bold);
+  font-size: clamp(var(--text-lg), 2.5vw, var(--text-xl));
+  color: var(--color-black);
+  margin: var(--space-8) 0 var(--space-4);
   line-height: var(--leading-tight);
 }
 

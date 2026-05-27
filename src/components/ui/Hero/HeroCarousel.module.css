@@ -57,7 +57,7 @@
 
 .excerpt {
   font-family: var(--font-serif), Georgia, serif;
-  font-size: var(--text-sm);
+  font-size: --text-base;
   color: var(--color-cream);
   opacity: 0.85;
   margin: 0.5rem 0 0;

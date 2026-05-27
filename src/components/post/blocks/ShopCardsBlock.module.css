@@ -12,7 +12,7 @@
 
 .intro {
   font-family: var(--font-serif), Georgia, serif;
-  font-size: var(--text-sm);
+  font-size: --text-base;
   font-style: italic;
   color: var(--color-black);
   opacity: 0.7;

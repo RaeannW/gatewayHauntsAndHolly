@@ -1,0 +1,103 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.bordered {
+  border-top: 2px solid var(--color-black);
+  border-bottom: 2px solid var(--color-black);
+}
+
+/* ── Columns ── */
+
+.column {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-8) var(--space-8);
+}
+
+.leftColumn {
+  border-right: 1px solid var(--color-black);
+}
+
+/* ── Within-column order ── */
+
+/* DOM order is always: [imageBlock, textBlock].
+   textFirst promotes textBlock above imageBlock visually via order. */
+
+.imageFirst .imageBlock { order: 0; }
+.imageFirst .textBlock  { order: 1; }
+
+.textFirst .imageBlock  { order: 1; }
+.textFirst .textBlock   { order: 0; }
+
+/* ── Image block ── */
+
+.imageBlock {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  flex-shrink: 0;
+}
+
+.image {
+  object-fit: cover;
+}
+
+/* ── Text block ── */
+
+.textBlock {
+  padding: var(--space-6) 0;
+}
+
+.heading {
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: var(--weight-bold);
+  font-size: clamp(var(--text-xl), 2.5vw, var(--text-3xl));
+  color: var(--color-black);
+  line-height: var(--leading-tight);
+  margin: 0 0 var(--space-4);
+}
+
+.body :global(p) {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: var(--text-lg);
+  line-height: var(--leading-normal);
+  color: var(--color-black);
+  margin: 0 0 var(--space-4);
+}
+
+.body :global(p:last-child) {
+  margin-bottom: 0;
+}
+
+/* ── Mobile ── */
+
+@media (max-width: 768px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  /* Right column stacks first, left column stacks second */
+  .leftColumn  { order: 2; }
+  .rightColumn { order: 1; }
+
+  /* Remove vertical rule; right column gets a horizontal rule beneath it */
+  .leftColumn {
+    border-right: none;
+  }
+
+  .rightColumn {
+    border-bottom: 1px solid var(--color-black);
+    padding-bottom: var(--space-8);
+  }
+
+  /* Normalize both columns to image-first regardless of desktop order */
+  .textFirst .imageBlock,
+  .imageFirst .imageBlock { order: 0; }
+
+  .textFirst .textBlock,
+  .imageFirst .textBlock  { order: 1; }
+}

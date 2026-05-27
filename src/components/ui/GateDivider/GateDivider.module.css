@@ -1,0 +1,12 @@
+.wrapper {
+  margin: var(--space-12) auto;
+  text-align: center;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  margin: 0 auto;
+}

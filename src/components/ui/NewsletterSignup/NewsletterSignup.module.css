@@ -23,7 +23,7 @@
 }
 
 .description {
-  font-size: var(--text-sm);
+  font-size: --text-base;
   color: var(--color-black);
   opacity: 0.75;
   line-height: var(--leading-snug);
@@ -39,7 +39,7 @@
 .input {
   padding: var(--space-3);
   font-family: var(--font-serif), system-ui, sans-serif;
-  font-size: var(--text-sm);
+  font-size: --text-base;
   color: var(--color-black);
   background: var(--color-cream);
   border: 1px solid var(--color-black);
