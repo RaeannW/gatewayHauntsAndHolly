@@ -1,0 +1,45 @@
+.contact {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--space-8) var(--space-16);
+}
+
+.intro {
+  max-width: 600px;
+  margin: var(--space-8) auto var(--space-6);
+  text-align: center;
+}
+
+.intro p {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: var(--text-lg);
+  line-height: var(--leading-normal);
+  color: var(--color-black);
+  margin: 0;
+}
+
+.formSection {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 0 var(--space-8);
+}
+
+.fallback {
+  font-family: var(--font-serif), Georgia, serif;
+  font-style: italic;
+  font-size: var(--text-base);
+  color: var(--color-black);
+  text-align: center;
+  margin: var(--space-8) 0 0;
+}
+
+.emailLink {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1.5px;
+}
+
+.emailLink:hover {
+  text-decoration-thickness: 2.5px;
+}
