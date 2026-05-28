@@ -1,0 +1,173 @@
+.card {
+  max-width: 900px;
+  margin: var(--space-8) auto;
+  padding: var(--space-6) var(--space-8);
+  background-color: var(--color-cream);
+  border: 3.5px dashed var(--color-black);
+  box-shadow: 4px 6px 0 rgba(26, 23, 20, 0.08);
+  position: relative;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding-bottom: var(--space-3);
+}
+
+.title {
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: var(--weight-bold);
+  font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl));
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-black);
+  margin: 0;
+  text-align: center;
+}
+
+.stamp {
+  position: absolute;
+  top: 0;
+  right: var(--space-2);
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  transform: rotate(6deg);
+}
+
+.divider {
+  height: 1px;
+  background-color: var(--color-black);
+  margin-bottom: var(--space-6);
+}
+
+.body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+  align-items: stretch;
+  position: relative;
+}
+
+.body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1.5px;
+  background-color: var(--color-black);
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.addressSide {
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  margin-right: 20px;
+}
+
+.messageSide {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-2) var(--space-2) var(--space-4);
+}
+
+.illustration {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--space-2);
+}
+
+.illustrationInner {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.kicker {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-black);
+  opacity: 0.7;
+}
+
+.addressFields {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.fieldLabel {
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: var(--weight-bold);
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-black);
+  margin: 0;
+}
+
+.fieldLine {
+  height: 1.5px;
+  opacity: 20%;
+  background-color: var(--color-black);
+  margin: 4px;
+  width: 100%;
+}
+
+.message {
+  font-family: var(--font-serif), Georgia, serif;
+  font-style: italic;
+  font-size: clamp(var(--text-base), 2vw, var(--text-xl));
+  line-height: var(--leading-snug);
+  color: var(--color-black);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: var(--space-4) var(--space-6);
+  }
+
+  .body {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .body::before {
+    display: none;
+  }
+
+  .addressSide,
+  .messageSide {
+    grid-column: 1;
+  }
+
+  .messageSide {
+    padding-left: 0;
+    border-top: 1px solid rgba(26, 23, 20, 0.4);
+    padding-top: var(--space-6);
+  }
+
+  .stamp {
+    width: 44px;
+    height: 44px;
+  }
+}
