@@ -3,9 +3,10 @@
 }
 
 .title {
-  font-family: var(--font-serif), Georgia, serif;
+  font-family: var(--font-title);
+  font-weight: 400;
+  font-style: normal;
   font-size: clamp(var(--text-4xl), 10vw, var(--text-6xl));
-  font-weight: var(--weight-bold);
   color: var(--color-black);
   text-align: center;
   margin: 0 0 var(--space-12);

@@ -12,10 +12,7 @@ export const metadata: Metadata = {
     "Get in touch with Gateway Haunts & Holly — tips, pitches, partnerships, and project inquiries welcome.",
 };
 
-const CONTACT_EMAIL = "hello@gatewayhauntsandholly.com";
-
-// TODO: replace with real Formspree endpoint after signing up
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+const CONTACT_EMAIL = "rae@gatewayhauntsandholly.com";
 
 export default function ContactPage() {
   return (
@@ -39,7 +36,7 @@ export default function ContactPage() {
       </section>
 
       <section className={styles.formSection} aria-label="Contact form">
-        <ContactForm formAction={FORMSPREE_ENDPOINT} />
+        <ContactForm formAction={process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT!} />
 
         <p className={styles.fallback}>
           Prefer your own email client? Reach me at{" "}

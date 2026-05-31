@@ -92,7 +92,7 @@ body {
   --color-row-dark: var(--color-black);
   --color-row-accent: var(--color-brown);
   --color-button-bg: var(--color-brown);
-  --color-button-hover-bg: var(--color-brown);
+  --color-button-hover-bg: var(--color-black);
   --color-tag-bg: var(--color-brown);
   --color-hero-bg: var(--color-black);
 }
