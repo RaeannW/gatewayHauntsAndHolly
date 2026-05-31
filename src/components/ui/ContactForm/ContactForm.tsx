@@ -14,7 +14,6 @@ const INQUIRY_TYPES = [
 ] as const;
 
 interface ContactFormProps {
-  /** Formspree endpoint, e.g. https://formspree.io/f/abc123 */
   formAction: string;
 }
 
@@ -94,7 +93,7 @@ export default function ContactForm({ formAction }: ContactFormProps) {
 
       <div className={styles.field}>
         <label htmlFor="inquiryType" className={styles.label}>
-          What's this about?
+          What is this about?
         </label>
         <select
           id="inquiryType"

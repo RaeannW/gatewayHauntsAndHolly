@@ -3,6 +3,7 @@ import HeroCarousel from "@/components/ui/Hero/HeroCarousel";
 import HomeLatest from "@/components/home/HomeLatest/HomeLatest";
 import HomeConnect from "@/components/home/HomeConnect/HomeConnect";
 import PageHeader from "@/components/ui/PageHeader/PageHeader";
+import Garland from "@/components/ui/Garland/Garland";
 import { getHomepageCarousel, getLatestPosts } from "@/sanity/lib/queries";
 import styles from "./page.module.css";
 
@@ -22,7 +23,7 @@ export default async function HomePage() {
 
         <HomeSections />
 
-        <div className={styles.divider} aria-hidden="true"></div>
+        <Garland src="/images/decor/laceTile.svg" height={60} />
 
         <HeroCarousel slides={carouselSlides} />
 
