@@ -23,22 +23,8 @@ export default async function HomePage() {
 
         <HomeSections />
 
-        <Garland src="/images/decor/laceTile.svg" height={60} />
-
         <HeroCarousel slides={carouselSlides} />
-
-        <div className={styles.divider} aria-hidden="true">
-          <span className={styles.diamondBottom} />
-          <span className={styles.lineBottom} />
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/decor/flourishTwo.svg"
-            alt=""
-            className={styles.flourishBottom}
-          />
-          <span className={styles.lineBottom} />
-          <span className={styles.diamondBottom} />
-        </div>
+        <Garland src="/images/decor/laceTile.svg" height={60} />
 
         <HomeLatest posts={latestPosts} />
 

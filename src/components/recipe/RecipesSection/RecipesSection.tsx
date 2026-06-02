@@ -26,7 +26,7 @@ export default function RecipesSection({
   heroTitle,
   heroSubtitle,
   heroButtonHref = "/recipes",
-  heroButtonLabel = "View All Recipes",
+  heroButtonLabel = "View All",
   sectionTitle,
   recipes,
   counts,
