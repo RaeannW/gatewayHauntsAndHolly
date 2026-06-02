@@ -14,7 +14,7 @@ interface RecipesHeroProps {
 export default function RecipesHero({
   title,
   subtitle,
-  buttonLabel = "View All Recipes",
+  buttonLabel = "View All",
   buttonHref = "/recipes",
   garlandImage,
   garlandHeight,

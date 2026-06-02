@@ -148,6 +148,7 @@
 
 .mobileMenu {
   display: none;
+  padding-bottom: 0.75rem;
 }
 
 .mobileMenu ul {
@@ -193,9 +194,6 @@
   .nav {
     display: none;
   }
-  /* .divider {
-    display: none;
-  } */
   .dividerTop {
     display: flex;
   }
@@ -204,5 +202,6 @@
   }
   .mobileMenu {
     display: block;
+    text-align: center;
   }
 }
