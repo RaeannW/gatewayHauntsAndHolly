@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Alegreya, Rozha_One } from "next/font/google";
 import Nav from "@/components/ui/Nav/Nav";
+import Footer from "@/components/ui/Footer/Footer";
 
 import "./globals.css";
 
@@ -35,6 +36,7 @@ export default function RootLayout({
       <body>
         <Nav />
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
