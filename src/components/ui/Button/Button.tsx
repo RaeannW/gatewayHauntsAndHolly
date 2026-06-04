@@ -1,7 +1,12 @@
 import Link from "next/link";
 import styles from "./Button.module.css";
 
-type ButtonVariant = "primary" | "secondary" | "ghost" | "outlined";
+type ButtonVariant =
+  | "primary"
+  | "secondary"
+  | "ghost"
+  | "outlined"
+  | "inverted";
 type ButtonSize = "sm" | "md" | "lg";
 
 interface BaseProps {

@@ -4,6 +4,7 @@ import FeaturedBlogCard from "@/components/blog/FeaturedBlogCard/FeaturedBlogCar
 import Garland from "@/components/ui/Garland/Garland";
 import BlogSection from "@/components/blog/BlogSection/BlogSection";
 import RecipesSection from "@/components/recipe/RecipesSection/RecipesSection";
+import CrossHubTeaser from "@/components/ui/CrossHubTeaser/CrossHubTeaser";
 import { Category } from "@/components/blog/CategoriesList/CategoriesList";
 import {
   getFeaturedPosts,
@@ -111,6 +112,16 @@ export default async function HalloweenPage() {
         tabBasePath="/halloween/recipes"
         garlandImage="/images/decor/laceTileCream.svg"
         garlandHeight={60}
+      />
+
+      <CrossHubTeaser
+        backgroundColor="var(--c-color-dark-green)"
+        accentColor="var(--c-color-dark-green)"
+        illustrationSrc="/images/decor/wreath-illustration.svg"
+        heading="When the Pumpkins Come Down…"
+        body="From light displays to holiday markets, we cover Christmas in St. Louis just as closely. Here's what to look forward to."
+        buttonLabel="Explore Christmas"
+        buttonHref="/christmas"
       />
     </>
   );
