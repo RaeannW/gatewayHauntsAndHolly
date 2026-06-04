@@ -4,6 +4,7 @@ import FeaturedBlogCard from "@/components/blog/FeaturedBlogCard/FeaturedBlogCar
 import Garland from "@/components/ui/Garland/Garland";
 import BlogSection from "@/components/blog/BlogSection/BlogSection";
 import RecipesSection from "@/components/recipe/RecipesSection/RecipesSection";
+import CrossHubTeaser from "@/components/ui/CrossHubTeaser/CrossHubTeaser";
 import { Category } from "@/components/blog/CategoriesList/CategoriesList";
 import {
   getFeaturedPosts,
@@ -111,6 +112,16 @@ export default async function ChristmasPage() {
         tabBasePath="/christmas/recipes"
         garlandImage="/images/decor/laceTileCream.svg"
         garlandHeight={60}
+      />
+
+      <CrossHubTeaser
+        backgroundColor="var(--h-color-dark-orange)"
+        accentColor="var(--h-color-dark-orange)"
+        illustrationSrc="/images/decor/pumpkin-illustration.svg"
+        heading="When the Twinkle Lights Come Down…"
+        body="The first leaves of fall mean the haunts are back. Here's where we start scouting the season's spookiest spots."
+        buttonLabel="Explore Halloween"
+        buttonHref="/halloween"
       />
     </>
   );
