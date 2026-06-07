@@ -7,6 +7,17 @@
   position: relative;
 }
 
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/images/backgrounds/paperBackground.jpeg");
+  opacity: 20%;
+  background-size: cover;
+  background-position: center top;
+  z-index: 0;
+}
+
 .garland {
   position: absolute;
   top: 0;
@@ -15,6 +26,8 @@
 }
 
 .inner {
+  position: relative;
+  z-index: 1;
   max-width: 600px;
   width: 100%;
   display: flex;
