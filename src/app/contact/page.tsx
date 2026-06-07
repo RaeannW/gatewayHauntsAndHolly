@@ -22,7 +22,7 @@ export default function ContactPage() {
       <Garland src="/images/decor/laceTile.svg" height={60} />
 
       <PostCard
-        illustrationSrc="/images/contact/postcard-illustration.png"
+        illustrationSrc="/images/decor/pumpkinIllustration.svg"
         illustrationAlt=""
         messageKicker="A note from the desk"
         message="Got a tip, a pitch, or just want to say hi? Drop us a line — we love hearing from fellow holiday people."

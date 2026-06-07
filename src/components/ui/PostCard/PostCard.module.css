@@ -1,5 +1,5 @@
 .card {
-  max-width: 900px;
+  max-width: 700px;
   margin: var(--space-8) auto;
   padding: var(--space-6) var(--space-8);
   background-color: var(--color-cream);
@@ -30,8 +30,8 @@
   position: absolute;
   top: 0;
   right: var(--space-2);
-  width: 56px;
-  height: 56px;
+  width: 220px;
+  height: 70px;
   object-fit: contain;
   transform: rotate(6deg);
 }

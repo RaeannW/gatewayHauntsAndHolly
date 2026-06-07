@@ -117,7 +117,7 @@ export default async function ChristmasPage() {
       <CrossHubTeaser
         backgroundColor="var(--h-color-dark-orange)"
         accentColor="var(--h-color-dark-orange)"
-        illustrationSrc="/images/decor/pumpkin-illustration.svg"
+        illustrationSrc="/images/decor/pumpkinIllustration.svg"
         heading="When the Twinkle Lights Come Down…"
         body="The first leaves of fall mean the haunts are back. Here's where we start scouting the season's spookiest spots."
         buttonLabel="Explore Halloween"
