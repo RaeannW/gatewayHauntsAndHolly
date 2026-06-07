@@ -30,7 +30,7 @@ export default function BlogSidebar({
               src={decorImage.src}
               alt={decorImage.alt}
               width={300}
-              height={400}
+              height={300}
               className={styles.image}
             />
           </div>

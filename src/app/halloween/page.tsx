@@ -117,7 +117,7 @@ export default async function HalloweenPage() {
       <CrossHubTeaser
         backgroundColor="var(--c-color-dark-green)"
         accentColor="var(--c-color-dark-green)"
-        illustrationSrc="/images/decor/wreath-illustration.svg"
+        illustrationSrc="/images/decor/trees.png"
         heading="When the Pumpkins Come Down…"
         body="From light displays to holiday markets, we cover Christmas in St. Louis just as closely. Here's what to look forward to."
         buttonLabel="Explore Christmas"

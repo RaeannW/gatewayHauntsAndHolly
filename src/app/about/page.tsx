@@ -28,7 +28,7 @@ export default function AboutPage() {
         sectionTitle="How It Started"
         imageSrc="/images/backgrounds/pumpkinBackground.jpeg"
         imageAlt="The founder of Gateway Haunts & Holly"
-        backgroundSrc="/images/backgrounds/orangePlaid.jpeg"
+        backgroundSrc="/images/backgrounds/fallPlaidDesign.jpeg"
       >
         <p>
           Gateway Haunts &amp; Holly started as a personal list — a running note

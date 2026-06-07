@@ -6,7 +6,7 @@ interface GateDividerProps {
 }
 
 export default function GateDivider({
-  src = "/images/decor/gate.svg",
+  src = "/images/decor/gateIllustration.png",
 }: GateDividerProps) {
   return (
     <div className={styles.wrapper}>
