@@ -46,16 +46,12 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  border: 1px solid var(--color-cream);
+  border: 1px solid var(--color-white);
   transition: background-color 0.2s ease;
 }
 
 .socialLink:hover {
   background-color: color-mix(in srgb, var(--color-cream) 15%, transparent);
-}
-
-.socialLink img {
-  filter: invert(1);
 }
 
 .navColumns {

@@ -1,7 +1,7 @@
 .signup {
   background: var(--color-cream);
   padding: var(--space-6);
-  border: 1px solid var(--color-black);
+  border: 2px dashed var(--color-black);
   position: relative;
 }
 
@@ -23,7 +23,7 @@
 }
 
 .description {
-  font-size: --text-base;
+  font-size: var(--text-base);
   color: var(--color-black);
   opacity: 0.75;
   line-height: var(--leading-snug);
@@ -39,7 +39,7 @@
 .input {
   padding: var(--space-3);
   font-family: var(--font-serif), system-ui, sans-serif;
-  font-size: --text-base;
+  font-size: var(--text-base);
   color: var(--color-black);
   background: var(--color-cream);
   border: 1px solid var(--color-black);
@@ -60,7 +60,6 @@
   margin: 0;
 }
 
-/* Dark variant — used inside black center column */
 .dark {
   background: transparent;
   border: none;
@@ -96,6 +95,42 @@
 
 .dark .success {
   color: var(--color-accent);
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: var(--text-sm);
+  color: var(--color-black);
+  line-height: var(--leading-snug);
+  cursor: pointer;
+}
+
+.checkbox {
+  flex-shrink: 0;
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.1em;
+  accent-color: var(--color-accent);
+  cursor: pointer;
+}
+
+.error {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: var(--text-sm);
+  font-style: italic;
+  color: var(--c-color-red);
+  margin: 0;
+}
+
+.dark .checkboxLabel {
+  color: var(--color-cream);
+}
+
+.dark .error {
+  color: var(--h-color-orange);
 }
 
 .srOnly {
