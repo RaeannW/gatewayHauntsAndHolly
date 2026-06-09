@@ -22,10 +22,20 @@
 }
 
 .box {
-  background-color: var(--color-white);
-  border: 3.5px dashed var(--color-black);
-  padding: var(--space-12) var(--space-8) var(--space-8);
+  background-color: var(--color-cream);
   text-align: center;
+  padding: var(--space-6);
+  border: 2px dashed var(--color-black);
+  position: relative;
+  box-shadow: 4px 6px 0 rgba(26, 23, 20, 0.08);
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 0.5px solid var(--color-black);
+  pointer-events: none;
 }
 
 .heading {
