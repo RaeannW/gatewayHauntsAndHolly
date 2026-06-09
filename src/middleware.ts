@@ -18,6 +18,6 @@ export const config = {
   // Gate everything EXCEPT: the coming-soon page itself, API routes (so the
   // signup form can submit), and static assets (so the page can load its CSS/fonts/images).
   matcher: [
-    "/((?!coming-soon|api|_next/static|_next/image|favicon.ico|.*\\.(?:png|jpg|jpeg|svg|gif|webp|ico|css|js|woff|woff2|ttf|otf)).*)",
+    "/((?!coming-soon|api|studio|_next/static|_next/image|favicon.ico|.*\\.(?:png|jpg|jpeg|svg|gif|webp|ico|css|js|woff|woff2|ttf|otf)).*)",
   ],
 };
