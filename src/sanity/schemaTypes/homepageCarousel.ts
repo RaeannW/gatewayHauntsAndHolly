@@ -6,8 +6,6 @@ export const homepageCarousel = defineType({
   title: "Homepage Carousel",
   type: "document",
   icon: ImagesIcon,
-  // Singleton: hide Create and Delete actions in the Studio UI
-  __experimental_actions: ["update", "publish"],
   preview: {
     prepare: () => ({ title: "Homepage Carousel" }),
   },
