@@ -3,9 +3,17 @@
   margin: var(--space-8) auto;
   padding: var(--space-6) var(--space-8);
   background-color: var(--color-cream);
-  border: 3.5px dashed var(--color-black);
+  border: 2px dashed var(--color-black);
   box-shadow: 4px 6px 0 rgba(26, 23, 20, 0.08);
   position: relative;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 0.5px solid var(--color-black);
+  pointer-events: none;
 }
 
 .header {

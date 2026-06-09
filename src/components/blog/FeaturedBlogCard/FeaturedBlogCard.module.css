@@ -37,7 +37,7 @@
 
 .label {
   font-family: var(--font-serif), Georgia, serif;
-  font-size: var(--text-base);
+  font-size: var(--text-xl);
   font-weight: var(--weight-bold);
   color: var(--color-accent);
   letter-spacing: var(--tracking-wide);
