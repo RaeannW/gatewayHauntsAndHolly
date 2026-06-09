@@ -5,7 +5,7 @@ import type { NextRequest } from "next/server";
 // The URL in the address bar stays the same; visitors just see the holding page.
 // Set COMING_SOON=true on Vercel PRODUCTION only, leave it off for Preview,
 // so your preview deploys keep showing the real site while you build.
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   if (process.env.COMING_SOON === "true") {
     const url = request.nextUrl.clone();
     url.pathname = "/coming-soon";
