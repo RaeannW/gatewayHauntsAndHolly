@@ -51,7 +51,7 @@ export default function ContactForm({ formAction }: ContactFormProps) {
     return (
       <div className={styles.successWrap}>
         <p className={styles.successHeading}>
-          Thanks — your message is on its way.
+          Thanks. Your message is on its way.
         </p>
         <p className={styles.successBody}>
           I read every note that comes in and try to respond within a week. Talk
