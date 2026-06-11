@@ -9,7 +9,7 @@ import styles from "./page.module.css";
 export const metadata: Metadata = {
   title: "Contact | Gateway Haunts & Holly",
   description:
-    "Get in touch with Gateway Haunts & Holly — tips, pitches, partnerships, and project inquiries welcome.",
+    "Get in touch with Gateway Haunts & Holly. Tips, pitches, partnerships, and project inquiries welcome.",
 };
 
 const CONTACT_EMAIL = "rae@gatewayhauntsandholly.com";
@@ -17,21 +17,21 @@ const CONTACT_EMAIL = "rae@gatewayhauntsandholly.com";
 export default function ContactPage() {
   return (
     <div className={styles.contact}>
-      <PageHeader title="Contact" tagline="Send Us a Note" showDivider />
+      <PageHeader title="Contact" tagline="Send a Note" showDivider />
 
       <Garland src="/images/decor/laceTile.svg" height={60} />
 
       <PostCard
         illustrationSrc="/images/decor/pumpkinIllustration.svg"
-        illustrationAlt=""
+        illustrationAlt="pumpkin"
         messageKicker="A note from the desk"
-        message="Got a tip, a pitch, or just want to say hi? Drop us a line — we love hearing from fellow holiday people."
+        message="Got a tip, a pitch, or just want to say hi? Send a message. I love hearing from fellow holiday people."
       />
       <section className={styles.intro} aria-label="Contact form introduction">
         <p>
-          The fastest way to reach me is the form below. I read every message
-          and try to respond within a week. Tell me a bit about whats on your
-          mind and Ill get back to you.
+          {`The fastest way to reach me is the form below. I read every message
+          and try to respond within a week. Tell me what's on your
+          mind and I'll get back to you.`}
         </p>
       </section>
 

@@ -13,10 +13,10 @@ export default function HomeConnect() {
           <div className={styles.iconCircle}>
             {/* TODO: replace with /images/home/aboutIcon.png */}
             <Image
-              src="/images/decor/wreath.png"
+              src="/images/decor/girlWriting.png"
               alt="About the Guide"
-              width={64}
-              height={64}
+              width={100}
+              height={100}
               className={styles.icon}
             />
           </div>
@@ -42,10 +42,10 @@ export default function HomeConnect() {
           <div className={styles.iconCircle}>
             {/* TODO: replace with /images/home/tipIcon.png */}
             <Image
-              src="/images/decor/wreath.png"
+              src="/images/decor/writing.png"
               alt="Submit a tip"
-              width={64}
-              height={64}
+              width={100}
+              height={100}
               className={styles.icon}
             />
           </div>
@@ -68,16 +68,7 @@ export default function HomeConnect() {
       {/* ── CENTER COLUMN ── */}
       <div className={`${styles.column} ${styles.centerCol}`}>
         <div className={styles.centerInner}>
-          <div className={styles.ornamentCircle}>
-            {/* TODO: replace with /images/home/dispatchOrnament.png */}
-            <Image
-              src="/images/decor/halloweenNewsletterImg.png"
-              alt=""
-              width={96}
-              height={96}
-              className={styles.ornamentImg}
-            />
-          </div>
+          <div className={styles.ornamentCircle}></div>
           <h2 className={styles.dispatchTitle}>The Dispatch</h2>
           <p className={styles.centerBlurb}>
             Seasonal picks, hidden gems, and local events — delivered straight
@@ -94,10 +85,10 @@ export default function HomeConnect() {
           <div className={styles.iconCircle}>
             {/* TODO: replace with /images/home/booBoxIcon.png */}
             <Image
-              src="/images/decor/wreath.png"
+              src="/images/decor/pumpkin.png"
               alt="Boo Boxes"
-              width={64}
-              height={64}
+              width={100}
+              height={100}
               className={styles.icon}
             />
           </div>
@@ -123,10 +114,10 @@ export default function HomeConnect() {
           <div className={styles.iconCircle}>
             {/* TODO: replace with /images/home/partnerIcon.png */}
             <Image
-              src="/images/decor/wreath.png"
+              src="/images/decor/partner.png"
               alt="Partner with us"
-              width={64}
-              height={64}
+              width={100}
+              height={100}
               className={styles.icon}
             />
           </div>
