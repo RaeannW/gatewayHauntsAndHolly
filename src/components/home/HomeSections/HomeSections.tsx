@@ -19,7 +19,7 @@ const SECTIONS: HomeSection[] = [
     kicker: "The Spooky Season",
     title: "Halloween",
     description:
-      "Pop-up bars, pumpkin patches, costume parties, and the haunted history of the city. Everything for a spooky season worth remembering.",
+      "Pop-up bars, pumpkin patches, haunted history and more. Everything for a spooky season worth remembering.",
   },
   {
     href: "/christmas",
@@ -28,7 +28,7 @@ const SECTIONS: HomeSection[] = [
     kicker: "The Merry Season",
     title: "Christmas",
     description:
-      "Light displays, holiday markets, cookie swaps, and family traditions. Your guide to making merry across the metro.",
+      "Light displays, holiday markets, cookie swaps, and family traditions. Your Christmas spirit guide.",
   },
   {
     href: "/stl",
@@ -37,7 +37,7 @@ const SECTIONS: HomeSection[] = [
     kicker: "The Gateway City",
     title: "St. Louis",
     description:
-      "Local events, neighborhood guides, and the seasonal happenings that make the metro feel like home all year round.",
+      "Local events, neighborhood guides, and the seasonal happenings. Check out the latest in the Lou.",
   },
 ];
 

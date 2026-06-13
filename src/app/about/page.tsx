@@ -26,7 +26,7 @@ export default function AboutPage() {
 
       <SplitSection
         sectionTitle="How It Started"
-        imageSrc="/images/backgrounds/pumpkinBackground.jpeg"
+        imageSrc="/images/people/rae.png"
         imageAlt="The founder of Gateway Haunts & Holly"
         backgroundSrc="/images/backgrounds/victorianPatternTan.jpeg"
       >
@@ -79,10 +79,10 @@ export default function AboutPage() {
         buttonHref="/contact"
       >
         <p>
-          Have a tip on a hidden gem, a pitch, or a partnership idea? Running a
-          holiday pop-up or event worth covering? Or just want to talk shop
-          about front-end work or a project you&apos;re building? My inbox is
-          open — I&apos;d love to hear from you.
+          {`Have a tip on a hidden gem, a pitch, or a partnership idea? Running a
+          holiday pop-up or event worth covering? My inbox is
+          open! I'd love to hear from you `}
+          .
         </p>
       </ConnectBox>
 

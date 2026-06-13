@@ -17,10 +17,7 @@ export default async function HomePage() {
   return (
     <>
       <div className={styles.home}>
-        <PageHeader
-          title="Welcome"
-          tagline="Your Halloween & Christmas Guide"
-        />
+        <PageHeader title="Welcome" tagline="Halloween & Christmas Guide" />
 
         <HomeSections />
 
