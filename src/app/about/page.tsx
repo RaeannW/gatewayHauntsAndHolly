@@ -28,7 +28,7 @@ export default function AboutPage() {
         sectionTitle="How It Started"
         imageSrc="/images/backgrounds/pumpkinBackground.jpeg"
         imageAlt="The founder of Gateway Haunts & Holly"
-        backgroundSrc="/images/backgrounds/fallPlaidDesign.jpeg"
+        backgroundSrc="/images/backgrounds/victorianPatternTan.jpeg"
       >
         <p>
           {`Gateway Haunts & Holly was first created as a portfolio piece to help me with my job search. I thought creating a blog from scratch would be a fun way to sharpen my development skills and showcase what I’ve been learning to recruiters. As a holiday lover, I decided to design and develop a project around Halloween and Christmas to help keep the momentum going, instead of bouncing from one idea to the next. Becoming a new mom also changed how I thought about my free time. In the evenings, I actually looked forward to building out a new page or component. It never felt like a chore.`}
@@ -41,33 +41,29 @@ export default function AboutPage() {
       <TwoUpSection
         bordered
         left={{
-          imageSrc: "/images/about/placeholder-future.jpg",
-          imageAlt: "",
+          imageSrc: "/images/decor/readingLeft.png",
+          imageAlt: "man reading book",
           heading: "Future Plans",
           body: (
             <p>
-              This is still very much a work in progress. The goal is to expand
-              coverage across the full metro — more neighborhoods, more hidden
-              gems, and a deeper dive into what makes each season worth
-              celebrating in St. Louis. Boo Boxes are coming, along with curated
-              gift guides and a proper events calendar. Lots more to build.
+              {`This website is a work in progress. Some to-do list items that I think will make fun additions are: a St. Louis area events calendar, site wide search feature, print-friendly recipe previews, and CSS animations. CSS is my ₊˚⊹♡  pASsioN ₊˚⊹♡. I’d love to add a secret dev corner where I post about what I’m working on and share code snippets with other people who are into that sorta stuff. `}
             </p>
           ),
           order: "textFirst",
         }}
         right={{
-          imageSrc: "/images/about/placeholder-person.jpg",
-          imageAlt: "",
+          imageSrc: "/images/decor/readingRight.png",
+          imageAlt: "woman reading book",
           heading: "Work Together?",
           body: (
-            <p>
-              By day I&apos;m a front-end developer and designer — I build
-              things for the web and care a lot about how they look and feel.
-              This site is where those instincts meet a genuine obsession with
-              Halloween and Christmas. If you&apos;re working on a design or
-              development project and think we might be a good fit, I&apos;d
-              love to hear about it.
-            </p>
+            <>
+              <p>
+                {`If you’ve come across my site and had the thought “this is neat”, maybe we should work together ¯\_(ツ)_/¯. Front-end development and design are my fav. Send me a message and we can see if it’s a good fit.`}
+              </p>
+              <p>
+                {`Interested in contributing to the site? I’d love to hear from you, especially if you love writing about spooky legends and sharing the history behind our favorite holidays.`}
+              </p>
+            </>
           ),
           order: "imageFirst",
         }}

@@ -72,11 +72,12 @@
 
 .backgroundImg {
   object-fit: cover;
+  opacity: 50%;
 }
 
 .photoWrap {
   position: absolute;
-  inset: 40px;
+  inset: 50px;
 }
 
 .photoImg {
@@ -103,6 +104,12 @@
 }
 
 @media (max-width: 768px) {
+  .heading {
+    text-align: center;
+    background-color: var(--color-tan-faded);
+    padding: var(--space-2);
+  }
+
   .grid {
     grid-template-columns: 1fr;
     gap: var(--space-8);
