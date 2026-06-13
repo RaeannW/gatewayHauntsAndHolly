@@ -1,52 +1,53 @@
 .wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  max-width: var(--container-max);
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 .bordered {
   border-top: 2px solid var(--color-black);
-  border-bottom: 2px solid var(--color-black);
 }
-
-/* ── Columns ── */
 
 .column {
   display: flex;
   flex-direction: column;
-  padding: var(--space-8) var(--space-8);
+  padding: var(--space-8) 0;
 }
 
 .leftColumn {
   border-right: 1px solid var(--color-black);
+  padding-right: var(--space-8);
 }
 
-/* ── Within-column order ── */
+.rightColumn {
+  padding-left: var(--space-8);
+}
 
-/* DOM order is always: [imageBlock, textBlock].
-   textFirst promotes textBlock above imageBlock visually via order. */
+.imageFirst .imageBlock {
+  order: 0;
+}
+.imageFirst .textBlock {
+  order: 1;
+}
 
-.imageFirst .imageBlock { order: 0; }
-.imageFirst .textBlock  { order: 1; }
-
-.textFirst .imageBlock  { order: 1; }
-.textFirst .textBlock   { order: 0; }
-
-/* ── Image block ── */
+.textFirst .imageBlock {
+  order: 1;
+}
+.textFirst .textBlock {
+  order: 0;
+}
 
 .imageBlock {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;
   flex-shrink: 0;
 }
 
 .image {
   object-fit: cover;
 }
-
-/* ── Text block ── */
 
 .textBlock {
   padding: var(--space-6) 0;
@@ -73,31 +74,38 @@
   margin-bottom: 0;
 }
 
-/* ── Mobile ── */
-
 @media (max-width: 768px) {
   .wrapper {
     grid-template-columns: 1fr;
   }
 
-  /* Right column stacks first, left column stacks second */
-  .leftColumn  { order: 2; }
-  .rightColumn { order: 1; }
-
-  /* Remove vertical rule; right column gets a horizontal rule beneath it */
   .leftColumn {
     border-right: none;
+    border-bottom: 2px solid var(--color-black);
+    padding-right: 0;
+    order: 1;
   }
 
   .rightColumn {
-    border-bottom: 1px solid var(--color-black);
+    margin-top: var(--space-8);
     padding-bottom: var(--space-8);
+    padding-left: 0;
+    order: 2;
   }
 
-  /* Normalize both columns to image-first regardless of desktop order */
   .textFirst .imageBlock,
-  .imageFirst .imageBlock { order: 0; }
+  .imageFirst .imageBlock {
+    order: 0;
+  }
 
   .textFirst .textBlock,
-  .imageFirst .textBlock  { order: 1; }
+  .imageFirst .textBlock {
+    order: 1;
+  }
+
+  .heading {
+    text-align: center;
+    background-color: var(--color-tan-faded);
+    padding: var(--space-2);
+  }
 }
