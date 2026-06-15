@@ -68,15 +68,17 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
             aria-hidden={!isActive ? true : undefined}
             tabIndex={!isActive ? -1 : undefined}
           >
-            <Image
-              src={slide.imageSrc}
-              alt={slide.imageAlt}
-              fill
-              sizes="(max-width: 768px) 100vw, 1200px"
-              className={styles.image}
-              priority={i === 0}
-            />
-            <div className={styles.scrim} aria-hidden="true" />
+            <div className={styles.imageWrap}>
+              <Image
+                src={slide.imageSrc}
+                alt={slide.imageAlt}
+                fill
+                sizes="(max-width: 768px) 100vw, 1200px"
+                className={styles.image}
+                priority={i === 0}
+              />
+              <div className={styles.scrim} aria-hidden="true" />
+            </div>
             <div className={styles.textBlock}>
               <span className={styles.category}>{slide.category}</span>
               <h3 className={styles.title}>{slide.title}</h3>
