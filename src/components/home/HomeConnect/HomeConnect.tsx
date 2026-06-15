@@ -6,27 +6,22 @@ import styles from "./HomeConnect.module.css";
 export default function HomeConnect() {
   return (
     <section className={styles.connect} aria-label="Connect with the guide">
-      {/* ── LEFT COLUMN ── */}
       <div className={styles.column}>
-        {/* Block 1: About the Guide */}
         <div className={styles.block}>
           <div className={styles.iconCircle}>
-            {/* TODO: replace with /images/home/aboutIcon.png */}
             <Image
               src="/images/decor/girlWriting.png"
-              alt="About the Guide"
+              alt="About the Site"
               width={100}
               height={100}
               className={styles.icon}
             />
           </div>
           <div className="ribbon">
-            <h3 className={styles.blockTitle}>About the Guide</h3>
+            <h3 className={styles.blockTitle}>About the Site</h3>
           </div>
           <p className={styles.blurb}>
-            We&rsquo;re a small team obsessed with making the most of every
-            season in St. Louis — from the first carved pumpkin to the last
-            strand of holiday lights.
+            {`Two seasons, endless things to make, bake, decorate, and diy. Discover hidden patches, local makers, and recipes worth repeating.`}
           </p>
           <div className={styles.ctaWrap}>
             <Button as="link" href="/about" variant="outlined" size="sm">
@@ -37,10 +32,8 @@ export default function HomeConnect() {
 
         <hr className={styles.blockDivider} />
 
-        {/* Block 2: Have a Tip? */}
         <div className={styles.block}>
           <div className={styles.iconCircle}>
-            {/* TODO: replace with /images/home/tipIcon.png */}
             <Image
               src="/images/decor/writing.png"
               alt="Submit a tip"
@@ -53,9 +46,7 @@ export default function HomeConnect() {
             <h3 className={styles.blockTitle}>Have a Tip?</h3>
           </div>
           <p className={styles.blurb}>
-            Readers are our best scouts. If you know a hidden pumpkin patch, a
-            pop-up market, or a neighbourhood tradition worth covering — we want
-            to hear about it.
+            {`Know a hidden pumpkin patch, a pop-up market, or a neighborhood tradition worth covering? Send it over. I'm always looking for new ideas!`}
           </p>
           <div className={styles.ctaWrap}>
             <Button as="link" href="/contact" variant="outlined" size="sm">
@@ -65,25 +56,19 @@ export default function HomeConnect() {
         </div>
       </div>
 
-      {/* ── CENTER COLUMN ── */}
       <div className={`${styles.column} ${styles.centerCol}`}>
         <div className={styles.centerInner}>
-          <div className={styles.ornamentCircle}></div>
           <h2 className={styles.dispatchTitle}>The Dispatch</h2>
           <p className={styles.centerBlurb}>
-            Seasonal picks, hidden gems, and local events — delivered straight
-            to your inbox before the weekend.
+            {`Seasonal picks, hidden gems, local events, and more.`}
           </p>
           <NewsletterSignup variant="dark" />
         </div>
       </div>
 
-      {/* ── RIGHT COLUMN ── */}
       <div className={styles.column}>
-        {/* Block 1: Boo Boxes */}
         <div className={styles.block}>
           <div className={styles.iconCircle}>
-            {/* TODO: replace with /images/home/booBoxIcon.png */}
             <Image
               src="/images/decor/pumpkin.png"
               alt="Boo Boxes"
@@ -96,8 +81,8 @@ export default function HomeConnect() {
             <h3 className={styles.blockTitle}>Boo Boxes</h3>
           </div>
           <p className={styles.blurb}>
-            A curated surprise box packed with local goods, seasonal treats, and
-            St. Louis-made finds. Limited runs, shipped straight to your door.
+            {`A curated surprise box packed with local goods, seasonal treats, and
+            St. Louis-made finds. Limited runs, shipped straight to your door.`}
           </p>
           <div className={styles.ctaWrap}>
             {/* TODO: wire to a real waitlist — /contact is a placeholder for now */}
@@ -109,10 +94,8 @@ export default function HomeConnect() {
 
         <hr className={styles.blockDivider} />
 
-        {/* Block 2: Partner With Us */}
         <div className={styles.block}>
           <div className={styles.iconCircle}>
-            {/* TODO: replace with /images/home/partnerIcon.png */}
             <Image
               src="/images/decor/partner.png"
               alt="Partner with us"
@@ -125,9 +108,7 @@ export default function HomeConnect() {
             <h3 className={styles.blockTitle}>Partner With Us</h3>
           </div>
           <p className={styles.blurb}>
-            We work with local makers, seasonal brands, and regional sponsors
-            who want to reach an engaged, place-loving audience. Let&rsquo;s
-            build something together.
+            {`Got a product, brand, or business that fits the Halloween or Christmas spirit? If you're a maker, seasonal brand, or regional sponsor, let's talk.`}
           </p>
           <div className={styles.ctaWrap}>
             <Button as="link" href="/contact" variant="outlined" size="sm">
