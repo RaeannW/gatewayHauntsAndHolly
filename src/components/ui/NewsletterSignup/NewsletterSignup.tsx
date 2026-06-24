@@ -17,6 +17,7 @@ export default function NewsletterSignup({
 }: NewsletterSignupProps) {
   const [email, setEmail] = useState("");
   const [stlLocal, setStlLocal] = useState(false);
+  const [gotcha, setGotcha] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -29,7 +30,7 @@ export default function NewsletterSignup({
       const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, stlLocal }),
+        body: JSON.stringify({ email, stlLocal, _gotcha: gotcha }),
       });
 
       const data = await res.json();
@@ -80,6 +81,16 @@ export default function NewsletterSignup({
             required
             disabled={isLoading}
             className={styles.input}
+          />
+          <input
+            type="text"
+            name="_gotcha"
+            tabIndex={-1}
+            autoComplete="off"
+            value={gotcha}
+            onChange={(e) => setGotcha(e.target.value)}
+            className={styles.honeypot}
+            aria-hidden="true"
           />
           {showStlCheckbox && (
             <label className={styles.checkboxLabel}>

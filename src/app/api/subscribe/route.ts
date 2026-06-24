@@ -19,7 +19,17 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Invalid request body." }, { status: 400 });
   }
 
-  const { email, stlLocal } = body as { email?: unknown; stlLocal?: unknown };
+  const { email, stlLocal, _gotcha } = body as {
+    email?: unknown;
+    stlLocal?: unknown;
+    _gotcha?: unknown;
+  };
+
+  // Honeypot: bots fill this hidden field, humans don't. Pretend success so
+  // bots don't learn to leave it blank.
+  if (typeof _gotcha === "string" && _gotcha.trim() !== "") {
+    return NextResponse.json({ ok: true });
+  }
 
   const normalizedEmail =
     typeof email === "string" ? email.trim().toLowerCase() : "";
@@ -31,13 +41,23 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const { data, error } = await resend.contacts.create({
-    email: normalizedEmail,
-    unsubscribed: false,
-    ...(stlLocal === true
-      ? { topics: [{ id: STL_TOPIC_ID, subscription: "opt_in" as const }] }
-      : {}),
-  });
+  const createContact = () =>
+    resend.contacts.create({
+      email: normalizedEmail,
+      unsubscribed: false,
+      ...(stlLocal === true
+        ? { topics: [{ id: STL_TOPIC_ID, subscription: "opt_in" as const }] }
+        : {}),
+    });
+
+  let { data, error } = await createContact();
+
+  // Resend's API occasionally fails to resolve on the first attempt
+  // (transient network blip) — one retry clears most of these.
+  if (error) {
+    await new Promise((resolve) => setTimeout(resolve, 500));
+    ({ data, error } = await createContact());
+  }
 
   if (error) {
     // "Contact already exists" is success — don't surface repeat signups as errors
