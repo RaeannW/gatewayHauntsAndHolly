@@ -104,7 +104,7 @@ export default async function ChristmasPage() {
 
       <RecipesSection
         heroTitle="Recipes"
-        heroSubtitle="Spooky-season sweets, savory bites, and drinks worth pouring into a goblet."
+        heroSubtitle="Seasonal sweets, savory bites, and drinks worth pouring into a goblet."
         sectionTitle="Latest Christmas Recipes"
         recipes={latestRecipes}
         counts={recipeCounts}

@@ -104,7 +104,7 @@ export default async function HalloweenPage() {
 
       <RecipesSection
         heroTitle="Recipes"
-        heroSubtitle="Spooky-season sweets, savory bites, and drinks worth pouring into a goblet."
+        heroSubtitle="Seasonal sweets, savory bites, and drinks worth pouring into a goblet."
         sectionTitle="Latest Halloween Recipes"
         recipes={latestRecipes}
         counts={recipeCounts}
