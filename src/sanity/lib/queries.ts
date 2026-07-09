@@ -266,30 +266,11 @@ export async function getLatestRecipes(
   );
 }
 
-export async function getRecipeSubcategoryCounts(
-  holiday: Holiday,
-): Promise<Record<RecipeSubcategory, number>> {
-  const counts: Record<RecipeSubcategory, number> = {
-    dessert: 0,
-    drink: 0,
-    appetizer: 0,
-    meal: 0,
-  };
-
-  const raw = await client.fetch<{ subcategory: RecipeSubcategory | null }[]>(
-    `*[_type == "post" && postType == "recipe" && (holiday == $holiday || holiday == "both")] {
-      "subcategory": recipeSubcategory->slug.current
-    }`,
+export async function getRecipesByHoliday(holiday: Holiday): Promise<Post[]> {
+  return client.fetch<Post[]>(
+    `*[_type == "post" && postType == "recipe" && (holiday == $holiday || holiday == "both")] | order(publishedAt desc) { ${postProjection} }`,
     { holiday },
   );
-
-  for (const r of raw) {
-    if (r.subcategory && r.subcategory in counts) {
-      counts[r.subcategory]++;
-    }
-  }
-
-  return counts;
 }
 
 function toHolidayLabel(holiday: Holiday): string {
