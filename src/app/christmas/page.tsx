@@ -3,35 +3,24 @@ import Hero from "@/components/ui/Hero/Hero";
 import FeaturedBlogCard from "@/components/blog/FeaturedBlogCard/FeaturedBlogCard";
 import Garland from "@/components/ui/Garland/Garland";
 import BlogSection from "@/components/blog/BlogSection/BlogSection";
-import RecipesSection from "@/components/recipe/RecipesSection/RecipesSection";
+import RecipesHubSection from "@/components/recipe/RecipesHubSection/RecipesHubSection";
 import CrossHubTeaser from "@/components/ui/CrossHubTeaser/CrossHubTeaser";
 import { Category } from "@/components/blog/CategoriesList/CategoriesList";
 import {
   getFeaturedPosts,
   getPostsByHoliday,
-  getLatestRecipes,
-  getRecipeSubcategoryCounts,
+  getRecipesByHoliday,
   getTopicsInOrder,
-  getRecipeSubcategoriesInOrder,
   getPostHref,
 } from "@/sanity/lib/queries";
 import styles from "./page.module.css";
 
 export default async function ChristmasPage() {
-  const [
-    featuredList,
-    allPosts,
-    latestRecipes,
-    recipeCounts,
-    topics,
-    subcategories,
-  ] = await Promise.all([
+  const [featuredList, allPosts, recipes, topics] = await Promise.all([
     getFeaturedPosts("christmas"),
     getPostsByHoliday("christmas"),
-    getLatestRecipes("christmas", 3),
-    getRecipeSubcategoryCounts("christmas"),
+    getRecipesByHoliday("christmas"),
     getTopicsInOrder(),
-    getRecipeSubcategoriesInOrder(),
   ]);
 
   const featured = featuredList[0];
@@ -102,14 +91,11 @@ export default async function ChristmasPage() {
         garlandHeight={60}
       />
 
-      <RecipesSection
+      <RecipesHubSection
+        holiday="christmas"
+        recipes={recipes}
         heroTitle="Recipes"
         heroSubtitle="Seasonal sweets, savory bites, and drinks worth pouring into a goblet."
-        sectionTitle="Latest Christmas Recipes"
-        recipes={latestRecipes}
-        counts={recipeCounts}
-        subcategories={subcategories}
-        tabBasePath="/christmas/recipes"
         garlandImage="/images/decor/laceTileCream.svg"
         garlandHeight={60}
       />
