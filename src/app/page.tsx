@@ -7,6 +7,7 @@ import Garland from "@/components/ui/Garland/Garland";
 import GateDivider from "@/components/ui/GateDivider/GateDivider";
 import { getHomepageCarousel, getLatestPosts } from "@/sanity/lib/queries";
 import styles from "./page.module.css";
+import GateIntro from "@/components/animations/GateIntro/GateIntro";
 
 export default async function HomePage() {
   const [carouselSlides, latestPosts] = await Promise.all([
@@ -16,6 +17,7 @@ export default async function HomePage() {
 
   return (
     <>
+    <GateIntro />
       <div className={styles.home}>
         <PageHeader title="Welcome" tagline="Halloween & Christmas Guide" />
 
