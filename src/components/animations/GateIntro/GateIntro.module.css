@@ -1,0 +1,68 @@
+:global(#gateLeft),
+:global(#gateRight) {
+  transform-box: fill-box;
+}
+
+:global(#gateLeft) {
+  transform-origin: left center;
+  animation: swingLeft 3.5s cubic-bezier(0.45, 1.2, 0.55, 0.95) forwards;
+}
+
+:global(#gateRight) {
+  transform-origin: right center;
+  animation: swingRight 3.5s cubic-bezier(0.45, 1.2, 0.55, 0.95) forwards;
+}
+
+.gate {
+  width: min(96vw, 700px);
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: #faf6ee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  perspective: 1200px;
+  animation: fadeOut 1.2s ease-out 1.5s forwards;
+}
+
+.sky {
+  position: absolute;
+  inset: 0;
+  background-image: url("/images/backgrounds/skyBackground.png");
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.sky::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--color-tan);
+  mix-blend-mode: multiply;
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(250, 246, 238, 0.78);
+  z-index: 1;
+}
+
+@keyframes swingLeft {
+  to { transform: rotateY(80deg) scale(1.05); }
+}
+@keyframes swingRight {
+  to { transform: rotateY(-80deg) scale(1.05); }
+}
+@keyframes fadeOut {
+  to { opacity: 0; }
+}
