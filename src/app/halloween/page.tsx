@@ -15,6 +15,8 @@ import {
 } from "@/sanity/lib/queries";
 import styles from "./page.module.css";
 
+export const revalidate = 60;
+
 export default async function HalloweenPage() {
   const [featuredList, allPosts, recipes, topics] = await Promise.all([
     getFeaturedPosts("halloween"),

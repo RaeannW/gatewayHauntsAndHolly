@@ -6,6 +6,8 @@ import {
   getRecipeSubcategoriesInOrder,
 } from "@/sanity/lib/queries";
 
+export const revalidate = 60;
+
 interface RecipePageProps {
   params: Promise<{ slug: string }>;
 }

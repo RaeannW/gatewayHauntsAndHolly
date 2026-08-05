@@ -16,6 +16,8 @@ import {
 } from "@/sanity/lib/queries";
 import styles from "./page.module.css";
 
+export const revalidate = 60;
+
 export default async function ChristmasPage() {
   // Temporary gate: set CHRISTMAS_COMING_SOON=true to hold this page back
   // without touching the built-out content below. Remove the env var to restore it.
