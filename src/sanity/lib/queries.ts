@@ -38,6 +38,7 @@ export interface RecipeTool {
   description?: string;
   image: { src: string; alt: string };
   affiliateUrl: string;
+  isAffiliate?: boolean;
 }
 
 export interface TopicInOrder {
@@ -150,7 +151,8 @@ const postProjection = `
     name,
     description,
     "image": { "src": image.asset->url, "alt": alt },
-    affiliateUrl
+    affiliateUrl,
+    isAffiliate
   },
   instructions,
   notes,

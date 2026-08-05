@@ -7,6 +7,7 @@ interface ShopCardProps {
   description?: string;
   image: { src: string; alt: string };
   affiliateUrl: string;
+  isAffiliate?: boolean;
 }
 
 export default function ShopCard({
@@ -14,6 +15,7 @@ export default function ShopCard({
   description,
   image,
   affiliateUrl,
+  isAffiliate = true,
 }: ShopCardProps) {
   return (
     <div className={styles.card}>
@@ -36,17 +38,25 @@ export default function ShopCard({
       </div>
       <div className={styles.info}>
         <h3 className={styles.name}>{name}</h3>
-        {description && <p className={styles.description}>{description}</p>}
-        <Button
-          as="link"
-          href={affiliateUrl}
-          variant="primary"
-          size="sm"
-          external
-          className={styles.button}
+        <p
+          className={`${styles.affiliateLabel} ${!isAffiliate ? styles.affiliateLabelHidden : ""}`}
+          aria-hidden={!isAffiliate}
         >
-          Shop
-        </Button>
+          Affiliate Link
+        </p>
+        {description && <p className={styles.description}>{description}</p>}
+        <div className={styles.actions}>
+          <Button
+            as="link"
+            href={affiliateUrl}
+            variant="primary"
+            size="sm"
+            external
+            className={styles.button}
+          >
+            Shop
+          </Button>
+        </div>
       </div>
     </div>
   );

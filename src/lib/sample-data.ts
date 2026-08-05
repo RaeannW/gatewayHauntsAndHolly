@@ -42,6 +42,7 @@ export interface RecipeTool {
     alt: string;
   };
   affiliateUrl: string;
+  isAffiliate?: boolean;
 }
 
 export type ContentBlock =

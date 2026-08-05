@@ -51,7 +51,7 @@
 
 .description {
   font-family: var(--font-serif), Georgia, serif;
-  font-size: --text-base;
+  font-size: var(--text-base);
   line-height: var(--leading-snug);
   color: var(--color-black);
   opacity: 0.8;
@@ -59,14 +59,36 @@
 }
 
 .button {
-  margin-top: var(--space-3);
   width: fit-content;
   padding-left: var(--space-8);
   padding-right: var(--space-8);
 }
 
+.actions {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.affiliateLabel {
+  margin: 0;
+  font-size: var(--text-xs);
+  font-weight: var(--weight-regular);
+  font-style: normal;
+  opacity: 0.6;
+}
+
+.affiliateLabelHidden {
+  visibility: hidden;
+}
+
 @media (max-width: 768px) {
   .card {
     max-width: 100%;
+  }
+  .info {
+    text-align: center;
+    align-items: center;
   }
 }
