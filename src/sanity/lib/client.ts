@@ -6,5 +6,5 @@ export const client = createClient({
   projectId,
   dataset,
   apiVersion,
-  useCdn: true, // Set to false if statically generating pages, using ISR or tag-based revalidation
+  useCdn: false, // ISR (revalidate=60) on the routes now handles freshness; stacking Sanity's CDN cache on top just adds staleness
 })

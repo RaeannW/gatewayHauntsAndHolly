@@ -9,6 +9,8 @@ import { getHomepageCarousel, getLatestPosts } from "@/sanity/lib/queries";
 import styles from "./page.module.css";
 import GateIntro from "@/components/animations/GateIntro/GateIntro";
 
+export const revalidate = 60;
+
 export default async function HomePage() {
   const [carouselSlides, latestPosts] = await Promise.all([
     getHomepageCarousel(),

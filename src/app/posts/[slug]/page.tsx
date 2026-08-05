@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import PostTemplate from "@/components/post/PostTemplate/PostTemplate";
 import { getPostBySlug, getAllNonRecipeSlugs } from "@/sanity/lib/queries";
 
+export const revalidate = 60;
+
 interface PostPageProps {
   params: Promise<{ slug: string }>;
 }
