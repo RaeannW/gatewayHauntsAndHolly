@@ -1,0 +1,26 @@
+.comingSoon {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--space-8) var(--space-16);
+}
+
+.body {
+  max-width: 600px;
+  margin: var(--space-8) auto;
+  text-align: center;
+}
+
+.message {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: var(--text-lg);
+  line-height: var(--leading-normal);
+  color: var(--color-black);
+  margin: 0 0 var(--space-8);
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: center;
+  flex-wrap: wrap;
+}

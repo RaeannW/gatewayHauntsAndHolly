@@ -5,6 +5,7 @@ import Garland from "@/components/ui/Garland/Garland";
 import BlogSection from "@/components/blog/BlogSection/BlogSection";
 import RecipesHubSection from "@/components/recipe/RecipesHubSection/RecipesHubSection";
 import CrossHubTeaser from "@/components/ui/CrossHubTeaser/CrossHubTeaser";
+import ComingSoon from "@/components/ui/ComingSoon/ComingSoon";
 import { Category } from "@/components/blog/CategoriesList/CategoriesList";
 import {
   getFeaturedPosts,
@@ -16,6 +17,17 @@ import {
 import styles from "./page.module.css";
 
 export default async function ChristmasPage() {
+  // Temporary gate: set CHRISTMAS_COMING_SOON=true to hold this page back
+  // without touching the built-out content below. Remove the env var to restore it.
+  if (process.env.CHRISTMAS_COMING_SOON === "true") {
+    return (
+      <ComingSoon
+        tagline="The Season of Lights"
+        message="Our Christmas guide is being trimmed and polished. Check back soon for holiday markets, cookie swaps, and St. Louis traditions."
+      />
+    );
+  }
+
   const [featuredList, allPosts, recipes, topics] = await Promise.all([
     getFeaturedPosts("christmas"),
     getPostsByHoliday("christmas"),
