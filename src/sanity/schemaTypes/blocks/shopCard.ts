@@ -36,6 +36,13 @@ export const shopCard = defineType({
       type: "url",
       validation: (Rule) => Rule.required().uri({ scheme: ["http", "https"] }),
     }),
+    defineField({
+      name: "isAffiliate",
+      title: "Affiliate link",
+      type: "boolean",
+      initialValue: true,
+      description: "Uncheck if this link does not earn a commission",
+    }),
   ],
   preview: {
     select: { title: "name", subtitle: "description", media: "image" },

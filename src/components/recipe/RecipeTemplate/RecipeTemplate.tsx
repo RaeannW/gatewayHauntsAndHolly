@@ -170,10 +170,17 @@ export default function RecipeTemplate({
 
           {recipe.tools && recipe.tools.length > 0 && (
             <div className={styles.tools}>
-              <h2 className={styles.sectionHeading}>Tools & Supplies</h2>
+              <h2 className={styles.sectionHeading}>Tools &amp; Supplies</h2>
               <p className={styles.toolsIntro}>
-                Specialty items used in this recipe. Some links may be
-                affiliated.
+                Optional specialty items and tools related to this recipe.
+                {recipe.tools.some((tool) => tool.isAffiliate !== false) && (
+                  <>
+                    {" "}
+                    Items marked <em>Affiliate Link</em> are affiliate links.
+                    As an Amazon Associate I earn from qualifying purchases, at
+                    no extra cost to you.
+                  </>
+                )}
               </p>
               <div className={styles.toolsGrid}>
                 {recipe.tools.map((tool, i) => (
