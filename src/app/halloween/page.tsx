@@ -56,8 +56,8 @@ export default async function HalloweenPage() {
         title="Halloween"
         subtitle="Tips and Treats to Celebrate the Spookiest Time of the Year"
         descriptionParagraphs={[
-          "Pop-up bars, pumpkin patches, costume parties, and the haunted history of the city. Everything you need for a spooky season worth remembering. Pop-up bars, pumpkin patches, costume parties, and the haunted history of the city. Everything you need for a spooky season worth remembering.",
-          "From family-friendly hayrides to adults-only haunts, we cover the corners of the metro where Halloween comes alive each fall. From family-friendly hayrides to adults-only haunts, we cover the corners of the metro where Halloween comes alive each fall.",
+          "Explore recipes, crafts, and movie recommendations for the spookiest season of the year. Everything here is made to be made. No perfect Pinterest results required.",
+          "Fall is when I feel the most inspired to create, so expect projects worth the mess, a few St. Louis ghost stories, and the occasional strong opinion about candy corn.",
         ]}
         countdownImage={{
           src: "/images/decor/alarm.png",
