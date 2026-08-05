@@ -3,6 +3,7 @@ import { Alegreya, Rozha_One } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import Nav from "@/components/ui/Nav/Nav";
 import Footer from "@/components/ui/Footer/Footer";
+import { SITE_URL } from "@/lib/constants";
 
 import "./globals.css";
 
@@ -20,6 +21,7 @@ const rozhaOne = Rozha_One({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Gateway Haunts & Holly",
   description:
     "Gateway Haunts & Holly is a blog dedicated to all things Halloween and Christmas, including local holiday events in the St. Louis Metro area.",
