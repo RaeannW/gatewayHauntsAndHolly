@@ -11,34 +11,23 @@ import {
   getPostsByHoliday,
   getRecipesByHoliday,
   getTopicsInOrder,
-  getPostHref,
+  getHalloweenCarousel,
 } from "@/sanity/lib/queries";
 import styles from "./page.module.css";
 
 export const revalidate = 60;
 
 export default async function HalloweenPage() {
-  const [featuredList, allPosts, recipes, topics] = await Promise.all([
+  const [featuredList, allPosts, recipes, topics, slides] = await Promise.all([
     getFeaturedPosts("halloween"),
     getPostsByHoliday("halloween"),
     getRecipesByHoliday("halloween"),
     getTopicsInOrder(),
+    getHalloweenCarousel(),
   ]);
 
   const featured = featuredList[0];
   const blogPosts = allPosts.filter((post) => post.postType !== "recipe");
-
-  const slides = featuredList
-    .filter((p) => Boolean(p.image?.src))
-    .slice(0, 6)
-    .map((p) => ({
-      href: getPostHref(p),
-      imageSrc: p.image.src,
-      imageAlt: p.image.alt,
-      category: `Halloween · ${p.postType.charAt(0).toUpperCase()}${p.postType.slice(1)}`,
-      title: p.title,
-      excerpt: p.excerpt,
-    }));
 
   const categories: Category[] = [
     { topic: "all", label: "All Posts", count: blogPosts.length },

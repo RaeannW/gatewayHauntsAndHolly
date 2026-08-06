@@ -1,6 +1,10 @@
 import type { StructureResolver } from "sanity/structure";
 
-const SINGLETON_TYPES = new Set(["homepageCarousel"]);
+const SINGLETON_TYPES = new Set([
+  "homepageCarousel",
+  "halloweenCarousel",
+  "christmasCarousel",
+]);
 
 // https://www.sanity.io/docs/structure-builder-cheat-sheet
 export const structure: StructureResolver = (S) =>
@@ -14,6 +18,22 @@ export const structure: StructureResolver = (S) =>
           S.document()
             .schemaType("homepageCarousel")
             .documentId("homepageCarousel"),
+        ),
+      S.listItem()
+        .title("Halloween Carousel")
+        .id("halloweenCarousel")
+        .child(
+          S.document()
+            .schemaType("halloweenCarousel")
+            .documentId("halloweenCarousel"),
+        ),
+      S.listItem()
+        .title("Christmas Carousel")
+        .id("christmasCarousel")
+        .child(
+          S.document()
+            .schemaType("christmasCarousel")
+            .documentId("christmasCarousel"),
         ),
       S.divider(),
       ...S.documentTypeListItems().filter(

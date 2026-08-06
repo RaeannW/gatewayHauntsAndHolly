@@ -1,5 +1,7 @@
 import { type SchemaTypeDefinition } from "sanity";
 import { homepageCarousel } from "./homepageCarousel";
+import { halloweenCarousel } from "./halloweenCarousel";
+import { christmasCarousel } from "./christmasCarousel";
 import { author } from "./author";
 import { topic } from "./topic";
 import { recipeSubcategory } from "./recipeSubcategory";
@@ -15,6 +17,8 @@ import { notesBlock } from "./blocks/notesBlock";
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
     homepageCarousel,
+    halloweenCarousel,
+    christmasCarousel,
     author,
     topic,
     recipeSubcategory,

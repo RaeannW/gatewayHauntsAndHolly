@@ -286,11 +286,13 @@ type RawCarouselSlide = Omit<
   "href" | "imageSrc" | "imageAlt" | "category"
 >;
 
-export async function getHomepageCarousel(): Promise<HomepageCarouselSlide[]> {
+async function getCarouselSlides(
+  documentType: "homepageCarousel" | "halloweenCarousel" | "christmasCarousel",
+): Promise<HomepageCarouselSlide[]> {
   const result = await client.fetch<{
     slides: RawCarouselSlide[] | null;
   } | null>(
-    `*[_type == "homepageCarousel"][0]{
+    `*[_type == $documentType][0]{
       "slides": slides[]->{
         "slug": slug.current,
         title,
@@ -300,6 +302,7 @@ export async function getHomepageCarousel(): Promise<HomepageCarouselSlide[]> {
         "image": { "src": image.asset->url, "alt": alt }
       }
     }`,
+    { documentType },
   );
 
   return (result?.slides ?? [])
@@ -311,6 +314,18 @@ export async function getHomepageCarousel(): Promise<HomepageCarouselSlide[]> {
       imageAlt: slide.image.alt,
       category: `${toHolidayLabel(slide.holiday)} · ${slide.postType.charAt(0).toUpperCase()}${slide.postType.slice(1)}`,
     }));
+}
+
+export function getHomepageCarousel(): Promise<HomepageCarouselSlide[]> {
+  return getCarouselSlides("homepageCarousel");
+}
+
+export function getHalloweenCarousel(): Promise<HomepageCarouselSlide[]> {
+  return getCarouselSlides("halloweenCarousel");
+}
+
+export function getChristmasCarousel(): Promise<HomepageCarouselSlide[]> {
+  return getCarouselSlides("christmasCarousel");
 }
 
 // getPostHref is pure logic, no data fetch — stays sync
